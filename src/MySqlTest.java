@@ -22,9 +22,9 @@ public class MySqlTest {
 			Statement stmt = con.createStatement();
 			System.out.println("Connected Succesfully");
 			
-			System.out.println("")
+			System.out.println("");
 			
-			ResultSet rs = stmt.executeQuery("Select * from dgargu1db.Department");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM dgargu1db.Department");
 			System.out.println("After query");
 
 			
