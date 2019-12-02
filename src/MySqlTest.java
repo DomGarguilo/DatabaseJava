@@ -6,6 +6,10 @@ import java.sql.Statement;
 
 public class MySqlTest {
 	public static void main(String[] args) {
+		
+		LoginPage.login(1111111);
+		
+		/*
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver Loaded");
@@ -24,19 +28,22 @@ public class MySqlTest {
 			
 			System.out.println("");
 			
-			ResultSet rs = stmt.executeQuery("SELECT * FROM dgargu1db.Department");
+			String test = "SELECT * FROM dgargu1db.login";
+			
+			ResultSet rs = stmt.executeQuery(test);
 			System.out.println("After query");
 
 			
 			while (rs.next()) {
-				String dName = rs.getString("DNAME");
-				String dNO = rs.getString("DNUMBER");
-				String mgrSSN = rs.getString("MGRSSN");
-				String mgrDate = rs.getString("MGRSTARTDATE");
-				System.out.println(dName+", "+dNO+", "+mgrSSN+", "+mgrDate);
+				String id = rs.getString("ID");
+				String un = rs.getString("UserName");
+				String type = rs.getString("type");
+				
+				System.out.println(id+", "+un+", "+type);
 			}
 		} catch (SQLException e) {
 			System.err.println(e);
 		}
+		*/
 	}
 }
