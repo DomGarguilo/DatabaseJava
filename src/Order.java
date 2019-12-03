@@ -5,12 +5,12 @@ public class Order {
 	
 	private ArrayList<OrderItem> orderList;	//list to store all order items
 	private int orderID;
-	private String customer;
+	private int customerID;
 	
-	public Order(int orderID, String customer) {
+	public Order(int orderID, int customer) {
 		this.orderList = new ArrayList<OrderItem>();
 		this.orderID = orderID;
-		this.customer = customer;
+		this.customerID = customer;
 	}	
 	
 	//getters and setters
@@ -26,11 +26,11 @@ public class Order {
 	public void setOrderID(int orderID) {
 		this.orderID = orderID;
 	}
-	public String getCustomer() {
-		return customer;
+	public int getCustomer() {
+		return customerID;
 	}
-	public void setCustomer(String customer) {
-		this.customer = customer;
+	public void setCustomer(int customer) {
+		this.customerID = customer;
 	}
 	
 	public void add(OrderItem item) {

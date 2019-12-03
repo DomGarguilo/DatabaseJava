@@ -1,33 +1,36 @@
 //abstract class for order item e.g. pasta or scrambled eggs
-public class OrderItem {
+public  abstract class OrderItem {
 	
-	//holds all order item info e.g. pasta, marinara, onions
-	private String description;
 	
+	private int orderID;
+	private int customerID;
+		
 	//default constructor
 	public OrderItem() {
-		this.description = "";
+		this.setOrderID(0);
+		this.setCustomerID(0);
 	}
 	//alternate constructor
-	public OrderItem(String description) {
-		this.description = description;
+	public OrderItem(int orderID, int customerID) {
+		this.setOrderID(orderID);
+		this.setCustomerID(customerID);
 	}
-	
+
 	//getters and setters
-	public String getdescription() {
-		return this.description;
+	public int getCustomerID() {
+		return this.customerID;
 	}
-	public void setdescription(String description) {
-		this.description = description;
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
+	}	
+	public int getOrderID() {
+		return this.orderID;
+	}
+	public void setOrderID(int orderID) {
+		this.orderID = orderID;
 	}
 	
-	public String toString() {
-		String result = this.description;
-		return result;
-	}
-	
-	public void print() {
-		System.out.print(this.toString());
-	}
+	public abstract String toString();
+	public abstract void print();
 	
 }
