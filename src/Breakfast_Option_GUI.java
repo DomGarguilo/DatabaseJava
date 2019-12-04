@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
+import javax.swing.JLayeredPane;
+import java.awt.Panel;
 
 public class Breakfast_Option_GUI extends JFrame {
 
@@ -78,33 +80,46 @@ public class Breakfast_Option_GUI extends JFrame {
 		L1.setBounds(224, 98, 198, 41);
 		contentPane.add(L1);
 		
+		///---------------------------------
+		
+		
+		//Button in Layers
+		JLayeredPane LP1 = new JLayeredPane();
+		LP1.setBounds(114, 143, 378, 105);
+		contentPane.add(LP1);
+		
+		JPanel Quant = new JPanel();
+		Quant.setBounds(42, 31, 291, 61);
+		LP1.add(Quant);
+		
+		JPanel Select = new JPanel();
+		LP1.setLayer(Select, 3);
+		Select.setBounds(0, 13, 366, 67);
+		LP1.add(Select);
+		
 		
 
 		// Buttons Live Here. 
 		JButton B1 = new JButton("New button");
-		B1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		B1.setBounds(137, 154, 97, 25);
-		contentPane.add(B1);
+		Select.add(B1);
 		
 		JButton B2 = new JButton("New button");
-		B2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		B2.setBounds(271, 154, 97, 25);
-		contentPane.add(B2);
+		Select.add(B2);
 		
 		JButton B3 = new JButton("New button");
+		Select.add(B3);
 		B3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		B3.setBounds(408, 154, 97, 25);
-		contentPane.add(B3);
-		///---------------------------------
+		B2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		B1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		
 		if(op == "Egg")
 		{
@@ -126,35 +141,17 @@ public class Breakfast_Option_GUI extends JFrame {
 			System.out.println("Display Pancake Options Only");
 		}
 		
-		JPanel P2 = new JPanel();
-		P2.setBounds(441, 228, 177, 127);
-		contentPane.add(P2);
-		P2.setLayout(null);
 		
-		JRadioButton Q1 = new JRadioButton("1");
-		Q1.setBounds(8, 46, 35, 25);
-		P2.add(Q1);
 		
-		JRadioButton Q2 = new JRadioButton("2");
-		Q2.setBounds(48, 46, 35, 25);
-		P2.add(Q2);
-		JRadioButton Q3 = new JRadioButton("3");
-		Q3.setBounds(88, 46, 35, 25);
-		P2.add(Q3);
-		JRadioButton Q4 = new JRadioButton("4");
-		Q4.setBounds(128, 46, 35, 25);
-		P2.add(Q4);
-		
-		JLabel lblNewLabel = new JLabel("Quantity");
-		lblNewLabel.setBounds(48, 13, 75, 16);
-		P2.add(lblNewLabel);
+		JLayeredPane LP2 = new JLayeredPane();
+		LP2.setBounds(109, 263, 421, 195);
+		contentPane.add(LP2);
 		
 		JPanel P1 = new JPanel();
-		P1.setBounds(46, 219, 382, 152);
-		contentPane.add(P1);
+		LP2.setLayer(P1, 2);
+		P1.setBounds(12, 13, 382, 152);
+		LP2.add(P1);
 		P1.setLayout(null);
-		
-		
 		
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Mushroom");
@@ -176,6 +173,32 @@ public class Breakfast_Option_GUI extends JFrame {
 		chckbxNewCheckBox_3.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxNewCheckBox_3.setBounds(126, 118, 113, 25);
 		P1.add(chckbxNewCheckBox_3);
+		
+		JPanel P2 = new JPanel();
+		P2.setBounds(123, 27, 177, 127);
+		LP2.add(P2);
+		LP2.setLayer(P2, 1);
+		P2.setLayout(null);
+		
+		JRadioButton Q1 = new JRadioButton("1");
+		Q1.setBounds(8, 46, 35, 25);
+		P2.add(Q1);
+		
+		JRadioButton Q2 = new JRadioButton("2");
+		Q2.setBounds(48, 46, 35, 25);
+		P2.add(Q2);
+		JRadioButton Q3 = new JRadioButton("3");
+		Q3.setBounds(88, 46, 35, 25);
+		P2.add(Q3);
+		JRadioButton Q4 = new JRadioButton("4");
+		Q4.setBounds(128, 46, 35, 25);
+		P2.add(Q4);
+		
+		JLabel lblNewLabel = new JLabel("Quantity");
+		lblNewLabel.setBounds(48, 13, 75, 16);
+		P2.add(lblNewLabel);
+		
+		P2.setVisible(false);
 		
 		
 	}
