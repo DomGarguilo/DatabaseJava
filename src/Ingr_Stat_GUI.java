@@ -51,32 +51,256 @@ public class Ingr_Stat_GUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// title
+		JLabel lblIngredientStatus = new JLabel("Ingredient Status Page");
+		lblIngredientStatus.setForeground(Color.WHITE);
+		lblIngredientStatus.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIngredientStatus.setFont(new Font("Tahoma", Font.BOLD, 32));
+		lblIngredientStatus.setBounds(233, 3, 416, 43);
+		contentPane.add(lblIngredientStatus);
+
+		// ingredient text box
+		JLabel lblStatus = new JLabel("Ingredient");
+		lblStatus.setHorizontalAlignment(SwingConstants.CENTER);
+		lblStatus.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 22));
+		lblStatus.setForeground(Color.WHITE);
+		lblStatus.setBounds(244, 59, 141, 25);
+		contentPane.add(lblStatus);
+
+		// stock status text box
+		JLabel lblStockStatus = new JLabel("Stock Status");
+		lblStockStatus.setHorizontalAlignment(SwingConstants.CENTER);
+		lblStockStatus.setForeground(Color.WHITE);
+		lblStockStatus.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+		lblStockStatus.setBounds(423, 60, 133, 25);
+		contentPane.add(lblStockStatus);
+
+		// alfredo box
 		JCheckBox checkBoxAlfredo = new JCheckBox("Status");
 		checkBoxAlfredo.setForeground(Color.WHITE);
 		checkBoxAlfredo.setBackground(Color.DARK_GRAY);
 		checkBoxAlfredo.setSelected(Tools.getIngredientStatus("Alfredo")); // Initializations Status based on Database
-		checkBoxAlfredo.setBounds(428, 119, 82, 25);
+		checkBoxAlfredo.setBounds(423, 94, 82, 25);
 		contentPane.add(checkBoxAlfredo);
-
-		JButton btnApplyChanges = new JButton("Apply Changes");
-		btnApplyChanges.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println(Tools.getIngredientStatus("Alfredo") + " Status");
-				Tools.setIngredientStatus("Alfredo", checkBoxAlfredo.isSelected());
-				System.out.println(checkBoxAlfredo.isSelected());
-				System.out.println("Apply changes went thru");
-			}
-		});
-		btnApplyChanges.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnApplyChanges.setBounds(287, 627, 195, 33);
-		contentPane.add(btnApplyChanges);
 
 		JLabel lblAlfredo = new JLabel("Alfredo");
 		lblAlfredo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAlfredo.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblAlfredo.setForeground(new Color(255, 255, 255));
-		lblAlfredo.setBounds(277, 119, 103, 25);
+		lblAlfredo.setBounds(282, 92, 103, 25);
 		contentPane.add(lblAlfredo);
+
+		JCheckBox checkBoxBacon = new JCheckBox("Status");
+		checkBoxBacon.setForeground(Color.WHITE);
+		checkBoxBacon.setBackground(Color.DARK_GRAY);
+		checkBoxBacon.setSelected(Tools.getIngredientStatus("Bacon")); // Initializations Status based on Database
+		checkBoxBacon.setBounds(423, 120, 82, 25);
+		contentPane.add(checkBoxBacon);
+
+		JLabel lblBacon = new JLabel("Bacon");
+		lblBacon.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblBacon.setForeground(Color.WHITE);
+		lblBacon.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblBacon.setBounds(282, 118, 103, 25);
+		contentPane.add(lblBacon);
+
+		JLabel lblBowtie = new JLabel("Bowtie");
+		lblBowtie.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblBowtie.setForeground(Color.WHITE);
+		lblBowtie.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblBowtie.setBounds(282, 143, 103, 25);
+		contentPane.add(lblBowtie);
+
+		JCheckBox checkBoxBowtie = new JCheckBox("Status");
+		checkBoxBowtie.setForeground(Color.WHITE);
+		checkBoxBowtie.setBackground(Color.DARK_GRAY);
+		checkBoxBowtie.setSelected(Tools.getIngredientStatus("Bowtie")); // Initializations Status based on Database
+		checkBoxBowtie.setBounds(423, 145, 82, 25);
+		contentPane.add(checkBoxBowtie);
+
+		JLabel lblCajun = new JLabel("Cajun");
+		lblCajun.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCajun.setForeground(Color.WHITE);
+		lblCajun.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblCajun.setBounds(282, 173, 103, 25);
+		contentPane.add(lblCajun);
+
+		JLabel lblCheese = new JLabel("Cheese");
+		lblCheese.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCheese.setForeground(Color.WHITE);
+		lblCheese.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblCheese.setBounds(282, 203, 103, 25);
+		contentPane.add(lblCheese);
+
+		JLabel lblChicken = new JLabel("Chicken");
+		lblChicken.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblChicken.setForeground(Color.WHITE);
+		lblChicken.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblChicken.setBounds(282, 233, 103, 25);
+		contentPane.add(lblChicken);
+
+		JLabel lblEgg = new JLabel("Egg");
+		lblEgg.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblEgg.setForeground(Color.WHITE);
+		lblEgg.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblEgg.setBounds(282, 263, 103, 25);
+		contentPane.add(lblEgg);
+
+		JCheckBox checkBoxCajun = new JCheckBox("Status");
+		checkBoxCajun.setForeground(Color.WHITE);
+		checkBoxCajun.setBackground(Color.DARK_GRAY);
+		checkBoxCajun.setSelected(Tools.getIngredientStatus("Cajun")); // Initializations Status based on Database
+		checkBoxCajun.setBounds(423, 175, 82, 25);
+		contentPane.add(checkBoxCajun);
+
+		JCheckBox checkBoxCheese = new JCheckBox("Status");
+		checkBoxCheese.setForeground(Color.WHITE);
+		checkBoxCheese.setBackground(Color.DARK_GRAY);
+		checkBoxCheese.setSelected(Tools.getIngredientStatus("Cheese")); // Initializations Status based on Database
+		checkBoxCheese.setBounds(423, 205, 82, 25);
+		contentPane.add(checkBoxCheese);
+
+		JCheckBox checkBoxChicken = new JCheckBox("Status");
+		checkBoxChicken.setForeground(Color.WHITE);
+		checkBoxChicken.setBackground(Color.DARK_GRAY);
+		checkBoxChicken.setSelected(Tools.getIngredientStatus("Chicken")); // Initializations Status based on Database
+		checkBoxChicken.setBounds(423, 235, 82, 25);
+		contentPane.add(checkBoxChicken);
+
+		JCheckBox checkBoxEgg = new JCheckBox("Status");
+		checkBoxEgg.setForeground(Color.WHITE);
+		checkBoxEgg.setBackground(Color.DARK_GRAY);
+		checkBoxEgg.setSelected(Tools.getIngredientStatus("Egg")); // Initializations Status based on Database
+		checkBoxEgg.setBounds(423, 265, 82, 25);
+		contentPane.add(checkBoxEgg);
+
+		JLabel lblMarinara = new JLabel("Marinara");
+		lblMarinara.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblMarinara.setForeground(Color.WHITE);
+		lblMarinara.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblMarinara.setBounds(282, 293, 103, 25);
+		contentPane.add(lblMarinara);
+
+		JLabel lblMeatball = new JLabel("Meatball");
+		lblMeatball.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblMeatball.setForeground(Color.WHITE);
+		lblMeatball.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblMeatball.setBounds(282, 323, 103, 25);
+		contentPane.add(lblMeatball);
+
+		JLabel lblOldBay = new JLabel("Old Bay");
+		lblOldBay.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblOldBay.setForeground(Color.WHITE);
+		lblOldBay.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblOldBay.setBounds(282, 377, 103, 25);
+		contentPane.add(lblOldBay);
+
+		JLabel lblOnion = new JLabel("Pancakes");
+		lblOnion.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblOnion.setForeground(Color.WHITE);
+		lblOnion.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblOnion.setBounds(282, 440, 103, 25);
+		contentPane.add(lblOnion);
+
+		JCheckBox checkBoxMarinara = new JCheckBox("Status");
+		checkBoxMarinara.setForeground(Color.WHITE);
+		checkBoxMarinara.setBackground(Color.DARK_GRAY);
+		checkBoxMarinara.setSelected(Tools.getIngredientStatus("Marinara")); // Initializations Status based on Database
+		checkBoxMarinara.setBounds(423, 295, 82, 25);
+		contentPane.add(checkBoxMarinara);
+
+		JCheckBox checkBoxMeatball = new JCheckBox("Status");
+		checkBoxMeatball.setForeground(Color.WHITE);
+		checkBoxMeatball.setBackground(Color.DARK_GRAY);
+		checkBoxMeatball.setSelected(Tools.getIngredientStatus("Meatball")); // Initializations Status based on Database
+		checkBoxMeatball.setBounds(423, 325, 82, 25);
+		contentPane.add(checkBoxMeatball);
+
+		JCheckBox checkBoxOldBay = new JCheckBox("Status");
+		checkBoxOldBay.setForeground(Color.WHITE);
+		checkBoxOldBay.setBackground(Color.DARK_GRAY);
+		checkBoxOldBay.setSelected(Tools.getIngredientStatus("Old Bay")); // Initializations Status based on Database
+		checkBoxOldBay.setBounds(423, 379, 82, 25);
+		contentPane.add(checkBoxOldBay);
+
+		JCheckBox checkBoxPancakes = new JCheckBox("Status");
+		checkBoxPancakes.setForeground(Color.WHITE);
+		checkBoxPancakes.setBackground(Color.DARK_GRAY);
+		checkBoxPancakes.setSelected(Tools.getIngredientStatus("Pancakes")); // Initializations Status based on Database
+		checkBoxPancakes.setBounds(423, 442, 82, 25);
+		contentPane.add(checkBoxPancakes);
+
+		JLabel lblPenne = new JLabel("Penne");
+		lblPenne.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPenne.setForeground(Color.WHITE);
+		lblPenne.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblPenne.setBounds(282, 472, 103, 25);
+		contentPane.add(lblPenne);
+
+		JLabel lblPesto = new JLabel("Pesto");
+		lblPesto.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPesto.setForeground(Color.WHITE);
+		lblPesto.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblPesto.setBounds(282, 507, 103, 25);
+		contentPane.add(lblPesto);
+
+		JLabel lblSalt = new JLabel("Salt");
+		lblSalt.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblSalt.setForeground(Color.WHITE);
+		lblSalt.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblSalt.setBounds(282, 536, 103, 25);
+		contentPane.add(lblSalt);
+
+		JCheckBox checkBoxPenne = new JCheckBox("Status");
+		checkBoxPenne.setForeground(Color.WHITE);
+		checkBoxPenne.setBackground(Color.DARK_GRAY);
+		checkBoxPenne.setSelected(Tools.getIngredientStatus("Penne")); // Initializations Status based on Database
+		checkBoxPenne.setBounds(423, 472, 82, 25);
+		contentPane.add(checkBoxPenne);
+
+		JCheckBox checkBoxPesto = new JCheckBox("Status");
+		checkBoxPesto.setForeground(Color.WHITE);
+		checkBoxPesto.setBackground(Color.DARK_GRAY);
+		checkBoxPesto.setSelected(Tools.getIngredientStatus("Pesto")); // Initializations Status based on Database
+		checkBoxPesto.setBounds(423, 509, 82, 25);
+		contentPane.add(checkBoxPesto);
+
+		JCheckBox checkBoxSalt = new JCheckBox("Status");
+		checkBoxSalt.setForeground(Color.WHITE);
+		checkBoxSalt.setBackground(Color.DARK_GRAY);
+		checkBoxSalt.setSelected(Tools.getIngredientStatus("Salt")); // Initializations Status based on Database
+		checkBoxSalt.setBounds(423, 538, 82, 25);
+		contentPane.add(checkBoxSalt);
+
+		JLabel lblSausage = new JLabel("Sausage");
+		lblSausage.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblSausage.setForeground(Color.WHITE);
+		lblSausage.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblSausage.setBounds(282, 566, 103, 25);
+		contentPane.add(lblSausage);
+
+		JCheckBox checkBoxSausage = new JCheckBox("Status");
+		checkBoxSausage.setForeground(Color.WHITE);
+		checkBoxSausage.setBackground(Color.DARK_GRAY);
+		checkBoxSausage.setSelected(Tools.getIngredientStatus("Sausage")); // Initializations Status based on Database
+		checkBoxSausage.setBounds(423, 568, 82, 25);
+		contentPane.add(checkBoxSausage);
+		
+		JCheckBox checkBoxMushroom = new JCheckBox("Status");
+		checkBoxMushroom.setSelected(false);
+		checkBoxMushroom.setForeground(Color.WHITE);
+		checkBoxMushroom.setBackground(Color.DARK_GRAY);
+		checkBoxMushroom.setSelected(Tools.getIngredientStatus("Mushroom")); // Initializations Status based on Database
+		checkBoxMushroom.setBounds(423, 353, 82, 25);
+		contentPane.add(checkBoxMushroom);
+		
+		JCheckBox checkBoxOnion = new JCheckBox("Status");
+		checkBoxOnion.setSelected(false);
+		checkBoxOnion.setForeground(Color.WHITE);
+		checkBoxOnion.setBackground(Color.DARK_GRAY);
+		checkBoxOnion.setSelected(Tools.getIngredientStatus("Onion")); // Initializations Status based on Database
+		checkBoxOnion.setBounds(423, 409, 82, 25);
+		contentPane.add(checkBoxOnion);
 
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
@@ -92,280 +316,46 @@ public class Ingr_Stat_GUI extends JFrame {
 		btnBack.setBounds(35, 20, 97, 25);
 		contentPane.add(btnBack);
 
-		// title
-		JLabel lblIngredientStatus = new JLabel("Ingredient Status Page");
-		lblIngredientStatus.setForeground(Color.WHITE);
-		lblIngredientStatus.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIngredientStatus.setFont(new Font("Tahoma", Font.BOLD, 32));
-		lblIngredientStatus.setBounds(229, 20, 416, 43);
-		contentPane.add(lblIngredientStatus);
+		JButton btnApplyChanges = new JButton("Apply Changes");
+		btnApplyChanges.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Tools.setIngredientStatus("Alfredo", checkBoxAlfredo.isSelected());
+				Tools.setIngredientStatus("Bacon", checkBoxBacon.isSelected());
+				Tools.setIngredientStatus("Bowtie", checkBoxBowtie.isSelected());
+				Tools.setIngredientStatus("Cajun", checkBoxCajun.isSelected());
+				Tools.setIngredientStatus("Cheese", checkBoxCheese.isSelected());
+				Tools.setIngredientStatus("Chicken", checkBoxChicken.isSelected());
+				Tools.setIngredientStatus("Egg", checkBoxEgg.isSelected());
+				Tools.setIngredientStatus("Marinara", checkBoxMarinara.isSelected());
+				Tools.setIngredientStatus("Meatball", checkBoxMeatball.isSelected());
+				Tools.setIngredientStatus("Mushroom", checkBoxMushroom.isSelected());
+				Tools.setIngredientStatus("Old Bay", checkBoxOldBay.isSelected());
+				Tools.setIngredientStatus("Onion", checkBoxOnion.isSelected());
+				Tools.setIngredientStatus("Pancakes", checkBoxPancakes.isSelected());
+				Tools.setIngredientStatus("Penne", checkBoxPenne.isSelected());
+				Tools.setIngredientStatus("Pesto", checkBoxPesto.isSelected());
+				Tools.setIngredientStatus("Salt", checkBoxSalt.isSelected());
+				Tools.setIngredientStatus("Sausage", checkBoxSausage.isSelected());
+				
+			}
+		});
+		btnApplyChanges.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnApplyChanges.setBounds(310, 616, 195, 33);
+		contentPane.add(btnApplyChanges);
 		
-		//ingredient text box
-		JLabel lblStatus = new JLabel("Ingredient");
-		lblStatus.setHorizontalAlignment(SwingConstants.CENTER);
-		lblStatus.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 22));
-		lblStatus.setForeground(Color.WHITE);
-		lblStatus.setBounds(239, 86, 141, 25);
-		contentPane.add(lblStatus);
+		JLabel lblMushroom = new JLabel("Mushroom");
+		lblMushroom.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblMushroom.setForeground(Color.WHITE);
+		lblMushroom.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblMushroom.setBounds(282, 351, 103, 25);
+		contentPane.add(lblMushroom);
 		
-		//stock status text box
-		JLabel lblStockStatus = new JLabel("Stock Status");
-		lblStockStatus.setHorizontalAlignment(SwingConstants.CENTER);
-		lblStockStatus.setForeground(Color.WHITE);
-		lblStockStatus.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblStockStatus.setBounds(418, 87, 133, 25);
-		contentPane.add(lblStockStatus);
-
-		JCheckBox checkBoxBacon = new JCheckBox("Status");
-		checkBoxBacon.setForeground(Color.WHITE);
-		checkBoxBacon.setBackground(Color.DARK_GRAY);
-		checkBoxBacon.setSelected(true);
-		checkBoxBacon.setBounds(428, 145, 82, 25);
-		contentPane.add(checkBoxBacon);
-
-		JLabel lblBacon = new JLabel("Bacon");
-		lblBacon.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblBacon.setForeground(Color.WHITE);
-		lblBacon.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblBacon.setBounds(277, 145, 103, 25);
-		contentPane.add(lblBacon);
-
-		JLabel lblBowtie = new JLabel("Bowtie");
-		lblBowtie.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblBowtie.setForeground(Color.WHITE);
-		lblBowtie.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblBowtie.setBounds(277, 171, 103, 25);
-		contentPane.add(lblBowtie);
-
-		JLabel lblBrocolli = new JLabel("Brocolli");
-		lblBrocolli.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblBrocolli.setForeground(Color.WHITE);
-		lblBrocolli.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblBrocolli.setBounds(277, 197, 103, 25);
-		contentPane.add(lblBrocolli);
-
-		JCheckBox checkBoxBrocolli = new JCheckBox("Status");
-		checkBoxBrocolli.setForeground(Color.WHITE);
-		checkBoxBrocolli.setBackground(Color.DARK_GRAY);
-		checkBoxBrocolli.setSelected(true);
-		checkBoxBrocolli.setBounds(428, 197, 82, 25);
-		contentPane.add(checkBoxBrocolli);
-
-		JCheckBox checkBoxBowtie = new JCheckBox("Status");
-		checkBoxBowtie.setForeground(Color.WHITE);
-		checkBoxBowtie.setBackground(Color.DARK_GRAY);
-		checkBoxBowtie.setSelected(true);
-		checkBoxBowtie.setBounds(428, 171, 82, 25);
-		contentPane.add(checkBoxBowtie);
-
-		JLabel lblCajun = new JLabel("Cajun");
-		lblCajun.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblCajun.setForeground(Color.WHITE);
-		lblCajun.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblCajun.setBounds(277, 223, 103, 25);
-		contentPane.add(lblCajun);
-
-		JLabel lblCheese = new JLabel("Cheese");
-		lblCheese.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblCheese.setForeground(Color.WHITE);
-		lblCheese.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblCheese.setBounds(277, 249, 103, 25);
-		contentPane.add(lblCheese);
-
-		JLabel lblChicken = new JLabel("Chicken");
-		lblChicken.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblChicken.setForeground(Color.WHITE);
-		lblChicken.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblChicken.setBounds(277, 275, 103, 25);
-		contentPane.add(lblChicken);
-
-		JLabel lblEgg = new JLabel("Egg");
-		lblEgg.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblEgg.setForeground(Color.WHITE);
-		lblEgg.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblEgg.setBounds(277, 301, 103, 25);
-		contentPane.add(lblEgg);
-
-		JCheckBox checkBoxCajun = new JCheckBox("Status");
-		checkBoxCajun.setForeground(Color.WHITE);
-		checkBoxCajun.setBackground(Color.DARK_GRAY);
-		checkBoxCajun.setSelected(true);
-		checkBoxCajun.setBounds(428, 223, 82, 25);
-		contentPane.add(checkBoxCajun);
-
-		JCheckBox checkBoxCheese = new JCheckBox("Status");
-		checkBoxCheese.setForeground(Color.WHITE);
-		checkBoxCheese.setBackground(Color.DARK_GRAY);
-		checkBoxCheese.setSelected(true);
-		checkBoxCheese.setBounds(428, 249, 82, 25);
-		contentPane.add(checkBoxCheese);
-
-		JCheckBox checkBoxChicken = new JCheckBox("Status");
-		checkBoxChicken.setForeground(Color.WHITE);
-		checkBoxChicken.setBackground(Color.DARK_GRAY);
-		checkBoxChicken.setSelected(true);
-		checkBoxChicken.setBounds(428, 275, 82, 25);
-		contentPane.add(checkBoxChicken);
-
-		JCheckBox checkBoxEgg = new JCheckBox("Status");
-		checkBoxEgg.setForeground(Color.WHITE);
-		checkBoxEgg.setBackground(Color.DARK_GRAY);
-		checkBoxEgg.setSelected(true);
-		checkBoxEgg.setBounds(428, 301, 82, 25);
-		contentPane.add(checkBoxEgg);
-
-		JLabel lblMarinara = new JLabel("Marinara");
-		lblMarinara.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblMarinara.setForeground(Color.WHITE);
-		lblMarinara.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblMarinara.setBounds(277, 327, 103, 25);
-		contentPane.add(lblMarinara);
-
-		JLabel lblMeatball = new JLabel("Meatball");
-		lblMeatball.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblMeatball.setForeground(Color.WHITE);
-		lblMeatball.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblMeatball.setBounds(277, 353, 103, 25);
-		contentPane.add(lblMeatball);
-
-		JLabel lblOldBay = new JLabel("Old Bay");
-		lblOldBay.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblOldBay.setForeground(Color.WHITE);
-		lblOldBay.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblOldBay.setBounds(277, 379, 103, 25);
-		contentPane.add(lblOldBay);
-
-		JLabel lblOnion = new JLabel("Pancakes");
-		lblOnion.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblOnion.setForeground(Color.WHITE);
-		lblOnion.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblOnion.setBounds(277, 405, 103, 25);
-		contentPane.add(lblOnion);
-
-		JCheckBox checkBoxMarinara = new JCheckBox("Status");
-		checkBoxMarinara.setForeground(Color.WHITE);
-		checkBoxMarinara.setBackground(Color.DARK_GRAY);
-		checkBoxMarinara.setSelected(true);
-		checkBoxMarinara.setBounds(428, 327, 82, 25);
-		contentPane.add(checkBoxMarinara);
-
-		JCheckBox checkBoxMeatball = new JCheckBox("Status");
-		checkBoxMeatball.setForeground(Color.WHITE);
-		checkBoxMeatball.setBackground(Color.DARK_GRAY);
-		checkBoxMeatball.setSelected(true);
-		checkBoxMeatball.setBounds(428, 353, 82, 25);
-		contentPane.add(checkBoxMeatball);
-
-		JCheckBox checkBoxOldBay = new JCheckBox("Status");
-		checkBoxOldBay.setForeground(Color.WHITE);
-		checkBoxOldBay.setBackground(Color.DARK_GRAY);
-		checkBoxOldBay.setSelected(true);
-		checkBoxOldBay.setBounds(428, 379, 82, 25);
-		contentPane.add(checkBoxOldBay);
-
-		JCheckBox checkBoxPancakes = new JCheckBox("Status");
-		checkBoxPancakes.setForeground(Color.WHITE);
-		checkBoxPancakes.setBackground(Color.DARK_GRAY);
-		checkBoxPancakes.setSelected(true);
-		checkBoxPancakes.setBounds(428, 405, 82, 25);
-		contentPane.add(checkBoxPancakes);
-
-		JLabel lblPenne = new JLabel("Penne");
-		lblPenne.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblPenne.setForeground(Color.WHITE);
-		lblPenne.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblPenne.setBounds(277, 431, 103, 25);
-		contentPane.add(lblPenne);
-
-		JLabel lblPepper = new JLabel("Pepper");
-		lblPepper.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblPepper.setForeground(Color.WHITE);
-		lblPepper.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblPepper.setBounds(277, 457, 103, 25);
-		contentPane.add(lblPepper);
-
-		JLabel lblPesto = new JLabel("Pesto");
-		lblPesto.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblPesto.setForeground(Color.WHITE);
-		lblPesto.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblPesto.setBounds(277, 483, 103, 25);
-		contentPane.add(lblPesto);
-
-		JLabel lblSalt = new JLabel("Salt");
-		lblSalt.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblSalt.setForeground(Color.WHITE);
-		lblSalt.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblSalt.setBounds(277, 509, 103, 25);
-		contentPane.add(lblSalt);
-
-		JCheckBox checkBoxPenne = new JCheckBox("Status");
-		checkBoxPenne.setForeground(Color.WHITE);
-		checkBoxPenne.setBackground(Color.DARK_GRAY);
-		checkBoxPenne.setSelected(true);
-		checkBoxPenne.setBounds(428, 431, 82, 25);
-		contentPane.add(checkBoxPenne);
-
-		JCheckBox checkBoxPepper = new JCheckBox("Status");
-		checkBoxPepper.setForeground(Color.WHITE);
-		checkBoxPepper.setBackground(Color.DARK_GRAY);
-		checkBoxPepper.setSelected(true);
-		checkBoxPepper.setBounds(428, 457, 82, 25);
-		contentPane.add(checkBoxPepper);
-
-		JCheckBox checkBoxPesto = new JCheckBox("Status");
-		checkBoxPesto.setForeground(Color.WHITE);
-		checkBoxPesto.setBackground(Color.DARK_GRAY);
-		checkBoxPesto.setSelected(true);
-		checkBoxPesto.setBounds(428, 483, 82, 25);
-		contentPane.add(checkBoxPesto);
-
-		JCheckBox checkBoxSalt = new JCheckBox("Status");
-		checkBoxSalt.setForeground(Color.WHITE);
-		checkBoxSalt.setBackground(Color.DARK_GRAY);
-		checkBoxSalt.setSelected(true);
-		checkBoxSalt.setBounds(428, 509, 82, 25);
-		contentPane.add(checkBoxSalt);
-
-		JLabel lblVeganChicken = new JLabel("Vegan Chicken");
-		lblVeganChicken.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblVeganChicken.setForeground(Color.WHITE);
-		lblVeganChicken.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblVeganChicken.setBounds(277, 587, 103, 25);
-		contentPane.add(lblVeganChicken);
-
-		JLabel lblSpinach = new JLabel("Spinach");
-		lblSpinach.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblSpinach.setForeground(Color.WHITE);
-		lblSpinach.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblSpinach.setBounds(277, 561, 103, 25);
-		contentPane.add(lblSpinach);
-
-		JLabel lblSausage = new JLabel("Sausage");
-		lblSausage.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblSausage.setForeground(Color.WHITE);
-		lblSausage.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblSausage.setBounds(277, 535, 103, 25);
-		contentPane.add(lblSausage);
-
-		JCheckBox checkBoxSausage = new JCheckBox("Status");
-		checkBoxSausage.setForeground(Color.WHITE);
-		checkBoxSausage.setBackground(Color.DARK_GRAY);
-		checkBoxSausage.setSelected(true);
-		checkBoxSausage.setBounds(428, 535, 82, 25);
-		contentPane.add(checkBoxSausage);
-
-		JCheckBox checkBoxSpinach = new JCheckBox("Status");
-		checkBoxSpinach.setForeground(Color.WHITE);
-		checkBoxSpinach.setBackground(Color.DARK_GRAY);
-		checkBoxSpinach.setSelected(true);
-		checkBoxSpinach.setBounds(428, 561, 82, 25);
-		contentPane.add(checkBoxSpinach);
-
-		JCheckBox checkBoxVeganChicken = new JCheckBox("Status");
-		checkBoxVeganChicken.setForeground(Color.WHITE);
-		checkBoxVeganChicken.setBackground(Color.DARK_GRAY);
-		checkBoxVeganChicken.setSelected(true);
-		checkBoxVeganChicken.setBounds(428, 587, 82, 25);
-		contentPane.add(checkBoxVeganChicken);
+		JLabel lblOnion_1 = new JLabel("Onion");
+		lblOnion_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblOnion_1.setForeground(Color.WHITE);
+		lblOnion_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblOnion_1.setBounds(282, 407, 103, 25);
+		contentPane.add(lblOnion_1);
 	}
 }
