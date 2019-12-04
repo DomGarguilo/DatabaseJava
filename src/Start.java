@@ -70,29 +70,25 @@ public class Start extends JFrame {
 				System.out.println(t_id.charAt(0));
 				//Call -> to Database to choose correct Page
 				System.out.println(t_id);
-				if(t_id =="fuck")
-				{
-					JOptionPane.showMessageDialog(rootPane, "wRoNg");
-				}
-				else
-				{
-					if(t_id.charAt(0) == '1')
-					{
-						Employee_GUI emp = new Employee_GUI();
-						emp.setVisible(true);
-						dispose();
-					}
-					else
-					{
+				
+				if(LoginPage.isCustomer(Integer.parseInt(t_id))) { //if its a customer ID
+					JOptionPane.showMessageDialog(rootPane, "Customer ID. Link to customer page here");
+					
+					
+				} else if(LoginPage.isEmployee(Integer.parseInt(t_id))) { //if its an employee ID
+					Employee_GUI emp = new Employee_GUI();
+					emp.setVisible(true);
+					dispose();
+					//if its neither
+				} else	{
+					JOptionPane.showMessageDialog(rootPane, "ID not found");
 						End emd = new End();
 						emd.setVisible(true);
 						dispose();
-					}
+				}
 					
 				}
-				System.out.println("Fuck");
+				//System.out.println("Fuck");
 				
-			}
 		});
-	}
-}
+}}
