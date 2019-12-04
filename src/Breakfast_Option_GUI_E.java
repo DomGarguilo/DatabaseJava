@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -14,6 +16,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import javax.swing.JLayeredPane;
 import java.awt.Panel;
+import javax.swing.SwingConstants;
 
 public class Breakfast_Option_GUI_E extends JFrame {
 
@@ -43,7 +46,7 @@ public class Breakfast_Option_GUI_E extends JFrame {
 		
 		//Creates - Frame must always be first before any - buttons / labels / etc....
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 662, 715);
+		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(47, 79, 79));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -68,49 +71,51 @@ public class Breakfast_Option_GUI_E extends JFrame {
 		
 		//Header  - 
 		JLabel Header = new JLabel("Place Holder");
+		Header.setHorizontalAlignment(SwingConstants.CENTER);
 		Header.setForeground(new Color(255, 255, 255));
 		Header.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		Header.setBounds(224, 35, 291, 50);
+		Header.setBounds(295, 35, 291, 50);
 		contentPane.add(Header);
 		
 		//First Option prompt
 		JLabel L1 = new JLabel("Place Holder");
+		L1.setHorizontalAlignment(SwingConstants.CENTER);
 		L1.setForeground(new Color(255, 255, 255));
 		L1.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		L1.setBounds(224, 98, 198, 41);
+		L1.setBounds(342, 98, 198, 41);
 		contentPane.add(L1);
 		
 		JLayeredPane LP2 = new JLayeredPane();
-		LP2.setBounds(106, 190, 421, 180);
+		LP2.setBounds(230, 190, 421, 180);
 		contentPane.add(LP2);
 		
 		JPanel P1 = new JPanel();
-		P1.setBounds(0, 0, 296, 152);
+		P1.setBounds(12, 2, 397, 152);
 		LP2.add(P1);
 		P1.setBackground(new Color(47, 79, 79));
 		LP2.setLayer(P1, 2);
 		P1.setLayout(null);
 		
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Mushroom");
-		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.BOLD, 16));
-		chckbxNewCheckBox.setBounds(126, 28, 113, 25);
-		P1.add(chckbxNewCheckBox);
+		JCheckBox chckbxNewCheckBoxMushroom = new JCheckBox("Mushroom");
+		chckbxNewCheckBoxMushroom.setFont(new Font("Tahoma", Font.BOLD, 16));
+		chckbxNewCheckBoxMushroom.setBounds(126, 28, 113, 25);
+		P1.add(chckbxNewCheckBoxMushroom);
 		
-		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Onion");
-		chckbxNewCheckBox_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		chckbxNewCheckBox_1.setBounds(126, 58, 113, 25);
-		P1.add(chckbxNewCheckBox_1);
+		JCheckBox chckbxNewCheckBoxOnion = new JCheckBox("Onion");
+		chckbxNewCheckBoxOnion.setFont(new Font("Tahoma", Font.BOLD, 16));
+		chckbxNewCheckBoxOnion.setBounds(126, 58, 113, 25);
+		P1.add(chckbxNewCheckBoxOnion);
 		
-		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("Spinach");
-		chckbxNewCheckBox_2.setFont(new Font("Tahoma", Font.BOLD, 16));
-		chckbxNewCheckBox_2.setBounds(126, 88, 113, 25);
-		P1.add(chckbxNewCheckBox_2);
+		JCheckBox chckbxNewCheckBoxSpinach = new JCheckBox("Spinach");
+		chckbxNewCheckBoxSpinach.setFont(new Font("Tahoma", Font.BOLD, 16));
+		chckbxNewCheckBoxSpinach.setBounds(126, 88, 113, 25);
+		P1.add(chckbxNewCheckBoxSpinach);
 		
-		JCheckBox chckbxNewCheckBox_3 = new JCheckBox("Cheese");
-		chckbxNewCheckBox_3.setFont(new Font("Tahoma", Font.BOLD, 16));
-		chckbxNewCheckBox_3.setBounds(126, 118, 113, 25);
-		P1.add(chckbxNewCheckBox_3);
+		JCheckBox chckbxNewCheckBoxCheese = new JCheckBox("Cheese");
+		chckbxNewCheckBoxCheese.setFont(new Font("Tahoma", Font.BOLD, 16));
+		chckbxNewCheckBoxCheese.setBounds(126, 118, 113, 25);
+		P1.add(chckbxNewCheckBoxCheese);
 		
 		JPanel P2 = new JPanel();
 		P2.setBackground(new Color(47, 79, 79));
@@ -147,98 +152,123 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			
 
 			// Buttons Live Here. 
-			JButton B1 = new JButton("New button");
-			B1.setBounds(170, 152, 104, 25);
-			contentPane.add(B1);
-			B1.addActionListener(new ActionListener() {
+			JButton scrambledEggButton = new JButton("New button");
+			scrambledEggButton.setBounds(235, 152, 125, 25);
+			contentPane.add(scrambledEggButton);
+			scrambledEggButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					P2.setVisible(false);
 					P1.setVisible(true);
 				}
 			});
-			B1.setText("Scrambled");
+			scrambledEggButton.setText("Scrambled Eggs");
 			
-			JButton B2 = new JButton("New button");
-			B2.setBounds(279, 152, 96, 25);
-			contentPane.add(B2);
-			B2.addActionListener(new ActionListener() {
+			JButton omletteButton = new JButton("New button");
+			omletteButton.setBounds(393, 152, 96, 25);
+			contentPane.add(omletteButton);
+			omletteButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					P2.setVisible(false);
 					P1.setVisible(true);
 				}
 			});
-			B2.setText("Omlette");
+			omletteButton.setText("Omlette");
 			
-			JButton B3 = new JButton("New button");
-			B3.setBounds(387, 152, 93, 25);
-			contentPane.add(B3);
+			JButton friedEggButton = new JButton("New button");
+			friedEggButton.setBounds(517, 152, 93, 25);
+			contentPane.add(friedEggButton);
 			
 			
 			//Actions Must Live Below any Panels and Stuff
-			B3.addActionListener(new ActionListener() {
+			friedEggButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					P1.setVisible(false);
 					P2.setVisible(true);
 				}
 			});
-			B3.setText("Fried");
+			friedEggButton.setText("Fried Eggs");
 			
 			JPanel panel = new JPanel();
 			panel.setLayout(null);
-			panel.setBounds(154, 409, 275, 164);
+			panel.setBounds(303, 409, 275, 164);
 			contentPane.add(panel);
 			
 			JLabel label = new JLabel("Suasage Quantity");
+			label.setHorizontalAlignment(SwingConstants.CENTER);
 			label.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			label.setBounds(49, 13, 199, 25);
+			label.setBounds(38, 13, 199, 25);
 			panel.add(label);
 			
 			JLabel label_1 = new JLabel("Bacon Quantity");
+			label_1.setHorizontalAlignment(SwingConstants.CENTER);
 			label_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			label_1.setBounds(49, 93, 199, 25);
+			label_1.setBounds(38, 93, 199, 25);
 			panel.add(label_1);
 			
-			JRadioButton radioButton = new JRadioButton("1");
-			radioButton.setBounds(47, 47, 35, 25);
-			panel.add(radioButton);
+			ButtonGroup G1 = new ButtonGroup();
+			ButtonGroup G2 = new ButtonGroup(); 
 			
-			JRadioButton radioButton_1 = new JRadioButton("2");
-			radioButton_1.setBounds(87, 47, 35, 25);
-			panel.add(radioButton_1);
+			JRadioButton radioButton1Sausage = new JRadioButton("1");
+			radioButton1Sausage.setBounds(70, 47, 35, 25);
+			panel.add(radioButton1Sausage);
 			
-			JRadioButton radioButton_2 = new JRadioButton("3");
-			radioButton_2.setBounds(127, 47, 35, 25);
-			panel.add(radioButton_2);
+			JRadioButton radioButton2Sausage = new JRadioButton("2");
+			radioButton2Sausage.setBounds(110, 47, 35, 25);
+			panel.add(radioButton2Sausage);
 			
-			JRadioButton radioButton_3 = new JRadioButton("4");
-			radioButton_3.setBounds(167, 47, 35, 25);
-			panel.add(radioButton_3);
+			JRadioButton radioButton3Sausage = new JRadioButton("3");
+			radioButton3Sausage.setBounds(150, 47, 35, 25);
+			panel.add(radioButton3Sausage);
 			
-			JRadioButton radioButton_4 = new JRadioButton("1");
-			radioButton_4.setBounds(49, 130, 35, 25);
-			panel.add(radioButton_4);
+			JRadioButton radioButton4Sausage = new JRadioButton("4");
+			radioButton4Sausage.setBounds(190, 47, 35, 25);
+			panel.add(radioButton4Sausage);
 			
-			JRadioButton radioButton_5 = new JRadioButton("2");
-			radioButton_5.setBounds(89, 130, 35, 25);
-			panel.add(radioButton_5);
+			JRadioButton radioButton0Sausage = new JRadioButton("0");
+			radioButton0Sausage.setBounds(31, 47, 35, 25);
+			panel.add(radioButton0Sausage);
 			
-			JRadioButton radioButton_6 = new JRadioButton("3");
-			radioButton_6.setBounds(129, 130, 35, 25);
-			panel.add(radioButton_6);
+			G1.add(radioButton0Sausage);
+			G1.add(radioButton1Sausage);
+			G1.add(radioButton2Sausage);
+			G1.add(radioButton3Sausage);
+			G1.add(radioButton4Sausage);
 			
-			JRadioButton radioButton_7 = new JRadioButton("4");
-			radioButton_7.setBounds(169, 130, 35, 25);
-			panel.add(radioButton_7);
+			JRadioButton radioButton4Bacon = new JRadioButton("4");
+			radioButton4Bacon.setBounds(190, 127, 35, 25);
+			panel.add(radioButton4Bacon);
+			
+			JRadioButton radioButton3Bacon = new JRadioButton("3");
+			radioButton3Bacon.setBounds(150, 127, 35, 25);
+			panel.add(radioButton3Bacon);
+			
+			JRadioButton radioButton2Bacon = new JRadioButton("2");
+			radioButton2Bacon.setBounds(110, 127, 35, 25);
+			panel.add(radioButton2Bacon);
+			
+			JRadioButton radioButton1Bacon = new JRadioButton("1");
+			radioButton1Bacon.setBounds(70, 127, 35, 25);
+			panel.add(radioButton1Bacon);
+			
+			JRadioButton radioButton0Bacon = new JRadioButton("0");
+			radioButton0Bacon.setBounds(31, 127, 35, 25);
+			panel.add(radioButton0Bacon);
+			
+			G2.add(radioButton0Bacon);
+			G2.add(radioButton1Bacon);
+			G2.add(radioButton2Bacon);
+			G2.add(radioButton3Bacon);
+			G2.add(radioButton4Bacon);
 			
 			JButton button = new JButton("Place Order");
 			button.setFont(new Font("Tahoma", Font.BOLD, 20));
-			button.setBounds(206, 597, 168, 41);
+			button.setBounds(357, 597, 168, 41);
 			contentPane.add(button);
 			
 			JLabel label_2 = new JLabel("Add Sides:");
 			label_2.setForeground(Color.WHITE);
 			label_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			label_2.setBounds(241, 383, 154, 25);
+			label_2.setBounds(305, 383, 154, 25);
 			contentPane.add(label_2);
 		
 		

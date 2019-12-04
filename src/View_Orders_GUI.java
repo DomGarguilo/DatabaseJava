@@ -7,6 +7,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 
 public class View_Orders_GUI extends JFrame {
@@ -48,8 +51,17 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.add(lblViewOrders);
 		
 		JButton btnBack = new JButton("Back");
-		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnBack.setBounds(24, 49, 97, 25);
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Employee_GUI egui = new Employee_GUI();
+				// Optional - Alert Message informing Employee about any Unsaved Changes to
+				// Status.
+				// "Unsaved Changes made - Continue or Correct"
+				egui.setVisible(true);
+				dispose();
+			}
+		});
+		btnBack.setBounds(35, 20, 97, 25);
 		contentPane.add(btnBack);
 	}
 

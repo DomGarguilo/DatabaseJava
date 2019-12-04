@@ -49,11 +49,12 @@ public class Employee_GUI extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(167, 31, 315, 58);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 32));
+		lblNewLabel.setBounds(283, 71, 315, 58);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnViewCurrentOrders = new JButton("View Current Orders");
+		btnViewCurrentOrders.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnViewCurrentOrders.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				View_Orders_GUI view = new View_Orders_GUI();
@@ -61,10 +62,11 @@ public class Employee_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnViewCurrentOrders.setBounds(220, 242, 222, 25);
+		btnViewCurrentOrders.setBounds(287, 294, 308, 42);
 		contentPane.add(btnViewCurrentOrders);
 		
 		JButton btnViewIngredientStatus = new JButton("View Ingredient Status");
+		btnViewIngredientStatus.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnViewIngredientStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Ingr_Stat_GUI istat = new Ingr_Stat_GUI();
@@ -72,7 +74,7 @@ public class Employee_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnViewIngredientStatus.setBounds(220, 142, 222, 25);
+		btnViewIngredientStatus.setBounds(287, 198, 308, 49);
 		contentPane.add(btnViewIngredientStatus);
 	}
 }
