@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Employee_GUI extends JFrame {
 
@@ -38,7 +40,7 @@ public class Employee_GUI extends JFrame {
 		setBounds(100, 100, 709, 409);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.WHITE);
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(new Color(0, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -52,10 +54,24 @@ public class Employee_GUI extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnViewCurrentOrders = new JButton("View Current Orders");
+		btnViewCurrentOrders.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				View_Orders_GUI view = new View_Orders_GUI();
+				view.setVisible(true);
+				dispose();
+			}
+		});
 		btnViewCurrentOrders.setBounds(220, 242, 222, 25);
 		contentPane.add(btnViewCurrentOrders);
 		
 		JButton btnViewIngredientStatus = new JButton("View Ingredient Status");
+		btnViewIngredientStatus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ingr_Stat_GUI istat = new Ingr_Stat_GUI();
+				istat.setVisible(true);
+				dispose();
+			}
+		});
 		btnViewIngredientStatus.setBounds(220, 142, 222, 25);
 		contentPane.add(btnViewIngredientStatus);
 	}

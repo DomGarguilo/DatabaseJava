@@ -97,5 +97,18 @@ public class Ingr_Stat_GUI extends JFrame {
 		lblAlfredo.setForeground(new Color(255, 255, 255));
 		lblAlfredo.setBounds(193, 236, 103, 43);
 		contentPane.add(lblAlfredo);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Employee_GUI egui = new Employee_GUI();
+				//Optional - Alert Message informing Employee about any Unsaved Changes to Status.
+				// "Unsaved Changes made - Continue or Correct"
+				egui.setVisible(true);
+				dispose();
+			}
+		});
+		btnBack.setBounds(35, 20, 97, 25);
+		contentPane.add(btnBack);
 	}
 }
