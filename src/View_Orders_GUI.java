@@ -5,6 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
 
 public class View_Orders_GUI extends JFrame {
 
@@ -38,6 +41,16 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel lblViewOrders = new JLabel("View Orders");
+		lblViewOrders.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblViewOrders.setBounds(194, 36, 162, 41);
+		contentPane.add(lblViewOrders);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnBack.setBounds(24, 49, 97, 25);
+		contentPane.add(btnBack);
 	}
 
 }
