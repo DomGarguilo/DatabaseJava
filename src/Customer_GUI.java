@@ -36,7 +36,7 @@ public class Customer_GUI extends JFrame {
 	 */
 	public Customer_GUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(51, 204, 153));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

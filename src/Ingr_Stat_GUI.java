@@ -43,7 +43,7 @@ public class Ingr_Stat_GUI extends JFrame {
 	 */
 	public Ingr_Stat_GUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 626, 719);
+		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setForeground(Color.DARK_GRAY);

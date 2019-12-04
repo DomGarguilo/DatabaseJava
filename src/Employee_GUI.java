@@ -37,7 +37,7 @@ public class Employee_GUI extends JFrame {
 	 */
 	public Employee_GUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 709, 409);
+		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.WHITE);
 		contentPane.setBackground(new Color(0, 0, 0));

@@ -36,7 +36,7 @@ public class Breakfast_GUI extends JFrame {
 	 */
 	public Breakfast_GUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 581, 290);
+		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,7 +48,7 @@ public class Breakfast_GUI extends JFrame {
 		lblNewLabel.setBounds(217, 13, 145, 45);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnHomeButton = new JButton("Home");
+		JButton btnHomeButton = new JButton("Logout");
 		btnHomeButton.setBackground(new Color(0, 128, 128));
 		btnHomeButton.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnHomeButton.addActionListener(new ActionListener() {
