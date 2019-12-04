@@ -74,7 +74,8 @@ public class Ingr_Stat_GUI extends JFrame {
 		contentPane.add(lblStatus);
 		
 		JCheckBox CheckBX = new JCheckBox("Status");
-		CheckBX.setSelected(true);
+		CheckBX.setSelected(Tools.getIngredientStatus("Alfredo")); // Initializations Status based on Database
+		
 		CheckBX.setBounds(334, 249, 82, 25);
 		contentPane.add(CheckBX);
 		
