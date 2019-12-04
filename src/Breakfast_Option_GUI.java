@@ -108,40 +108,6 @@ public class Breakfast_Option_GUI extends JFrame {
 		
 		JButton B3 = new JButton("New button");
 		Select.add(B3);
-		B3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		B2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		B1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
-		if(op == "Egg")
-		{
-			System.out.println("Display Egg Options Only");
-			Header.setText("Egg Options");
-			L1.setText("Select Cook Style");
-			B1.setText("Scrambled");
-			B2.setText("Omlette");
-			B3.setText("Fried");
-		}
-		else if(op == "Pancake")
-		{
-			Header.setText("Pancake Options");
-			System.out.println("Display Bacon Option Only");
-			L1.setText("Select Toppings");
-		}
-		else
-		{
-			System.out.println("Display Pancake Options Only");
-		}
-		
-		
 		
 		JLayeredPane LP2 = new JLayeredPane();
 		LP2.setBounds(109, 263, 421, 195);
@@ -198,7 +164,48 @@ public class Breakfast_Option_GUI extends JFrame {
 		lblNewLabel.setBounds(48, 13, 75, 16);
 		P2.add(lblNewLabel);
 		
-		P2.setVisible(false);
+		
+		//Actions Must Live Below any Panels and Stuff
+		B3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				P1.setVisible(false);
+				P2.setVisible(true);
+			}
+		});
+		B2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				P2.setVisible(false);
+				P1.setVisible(true);
+			}
+		});
+		B1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				P2.setVisible(false);
+				P1.setVisible(true);
+			}
+		});
+		
+		if(op == "Egg")
+		{
+			System.out.println("Display Egg Options Only");
+			Header.setText("Egg Options");
+			L1.setText("Select Cook Style");
+			B1.setText("Scrambled");
+			B2.setText("Omlette");
+			B3.setText("Fried");
+		}
+		else if(op == "Pancake")
+		{
+			Header.setText("Pancake Options");
+			System.out.println("Display Bacon Option Only");
+			L1.setText("Select Toppings");
+		}
+		else
+		{
+			System.out.println("Display Pancake Options Only");
+		}
+		
+		
 		
 		
 	}
