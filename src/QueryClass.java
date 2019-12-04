@@ -46,5 +46,32 @@ public class QueryClass {
 		}
 		return null;
 	}
+	
+	public static void update(String q) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("Driver Loaded");
+		} catch (ClassNotFoundException e) {
+			System.out.println(e);
+		}
+
+		final String ID = "dgargu1";
+		final String PW = "Cosc*ad35";
+		final String SERVER = "jdbc:mysql://triton.towson.edu:3360/?serverTimezone=EST#/" + ID + "db";
+
+		try {
+			Connection con = DriverManager.getConnection(SERVER, ID, PW);
+			Statement stmt = con.createStatement();
+			System.out.println("Connected Succesfully");
+
+			System.out.println("");
+
+			stmt.executeUpdate(q);
+			System.out.println("After query");
+						
+		} catch (SQLException e) {
+			System.err.println(e);
+		}
+	}
 
 }
