@@ -79,8 +79,8 @@ public class Start extends JFrame {
 					Employee_GUI emp = new Employee_GUI();
 					emp.setVisible(true);
 					dispose();
-					//if its neither
-				} else	{
+					
+				} else	{ //if its neither
 					JOptionPane.showMessageDialog(rootPane, "ID not found");
 						End emd = new End();
 						emd.setVisible(true);
