@@ -96,15 +96,5 @@ public class Breakfast_GUI extends JFrame {
 		});
 		btnNewButton_1.setBounds(203, 146, 139, 45);
 		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("Bacon");
-		btnNewButton_2.setBackground(new Color(0, 128, 128));
-		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_2.setBounds(400, 146, 123, 45);
-		contentPane.add(btnNewButton_2);
 	}
 }
