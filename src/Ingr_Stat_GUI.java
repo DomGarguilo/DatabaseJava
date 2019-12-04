@@ -12,6 +12,11 @@ import javax.swing.JTable;
 import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.JToggleButton;
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ingr_Stat_GUI extends JFrame {
 
@@ -67,5 +72,29 @@ public class Ingr_Stat_GUI extends JFrame {
 		lblStatus.setForeground(Color.WHITE);
 		lblStatus.setBounds(105, 101, 103, 16);
 		contentPane.add(lblStatus);
+		
+		JCheckBox CheckBX = new JCheckBox("Status");
+		CheckBX.setSelected(true);
+		CheckBX.setBounds(334, 249, 82, 25);
+		contentPane.add(CheckBX);
+		
+		JButton btnApplyChanges = new JButton("Apply Changes");
+		btnApplyChanges.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(Tools.getIngredientStatus("Alfredo")+" Status");
+				Tools.setIngredientStatus("Alfredo", CheckBX.isSelected());
+				System.out.println(CheckBX.isSelected());
+				System.out.println("Work?");
+			}
+		});
+		btnApplyChanges.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnApplyChanges.setBounds(193, 333, 195, 33);
+		contentPane.add(btnApplyChanges);
+		
+		JLabel lblAlfredo = new JLabel("Alfredo");
+		lblAlfredo.setFont(new Font("Tahoma", Font.PLAIN, 23));
+		lblAlfredo.setForeground(new Color(255, 255, 255));
+		lblAlfredo.setBounds(193, 236, 103, 43);
+		contentPane.add(lblAlfredo);
 	}
 }
