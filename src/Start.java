@@ -47,7 +47,7 @@ public class Start extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Login");
-		btnNewButton.setBackground(new Color(51, 0, 51));
+		btnNewButton.setBackground(new Color(51, 102, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 39));
 		btnNewButton.setBounds(127, 155, 192, 64);
 
@@ -72,7 +72,11 @@ public class Start extends JFrame {
 				System.out.println(t_id);
 				
 				if(LoginPage.isCustomer(Integer.parseInt(t_id))) { //if its a customer ID
-					JOptionPane.showMessageDialog(rootPane, "Customer ID. Link to customer page here");
+//					JOptionPane.showMessageDialog(rootPane, "Customer ID. Link to customer page here");
+					Customer_GUI cst = new Customer_GUI();
+					cst.setVisible(true);
+					dispose();
+					
 					
 					
 				} else if(LoginPage.isEmployee(Integer.parseInt(t_id))) { //if its an employee ID
