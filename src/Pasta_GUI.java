@@ -151,12 +151,12 @@ public class Pasta_GUI extends JFrame {
 		chckbxOldBay.setBounds(236, 489, 113, 25);
 		contentPane.add(chckbxOldBay);
 		
-		JCheckBox chckbxSallt = new JCheckBox("Salt");
-		chckbxSallt.setForeground(Color.WHITE);
-		chckbxSallt.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		chckbxSallt.setBackground(Color.DARK_GRAY);
-		chckbxSallt.setBounds(517, 489, 113, 25);
-		contentPane.add(chckbxSallt);
+		JCheckBox chckbxSalt = new JCheckBox("Salt");
+		chckbxSalt.setForeground(Color.WHITE);
+		chckbxSalt.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		chckbxSalt.setBackground(Color.DARK_GRAY);
+		chckbxSalt.setBounds(517, 489, 113, 25);
+		contentPane.add(chckbxSalt);
 		
 		JCheckBox chckbxCajun = new JCheckBox("Cajun");
 		chckbxCajun.setForeground(Color.WHITE);
@@ -179,9 +179,58 @@ public class Pasta_GUI extends JFrame {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PastaOrder order = new PastaOrder();
-				//if () {
-					
-			//	}
+				
+				// Adds pasta type
+				
+				
+				// Adds sauce types
+				String sauces = new String();
+				if (chckbxAlfredo.isSelected()) {
+					sauces += "Alfredo ";
+				}
+				if (chckbxMarinara.isSelected()) {
+					sauces += "Marinara ";
+				}
+				if (chckbxPesto.isSelected()) {
+					sauces += "Pesto ";
+				}
+				order.setSauceType(sauces);
+				
+				// Adds ingredients
+				String ingredients = new String();
+				if (chckbxCheese.isSelected()) {
+					ingredients += "Cheese ";
+				}
+				if (chckbxMushroom.isSelected()) {
+					ingredients += "Mushroom ";
+				}
+				if (chckbxOnions.isSelected()) {
+					ingredients += "Onions ";
+				}
+				if (chckbxChicken.isSelected()) {
+					ingredients += "Chicken ";
+				}
+				order.setIngredients(ingredients);
+				
+				// Adds seasonings 
+				String seasonings = new String();
+				if (chckbxOldBay.isSelected()) {
+					seasonings += "Old Bay ";
+				}
+				if (chckbxSalt.isSelected()) {
+					seasonings += "Salt ";
+				}
+				if (chckbxCajun.isSelected()) {
+					seasonings += "Cajun ";
+				}
+				if (chckbxOldBay.isSelected()) {
+					seasonings += "Garlic ";
+				}
+				order.setSeasonings(seasonings);
+				
+				order.pushToDatabase();
+				
+				
 			}
 		});
 		btnSubmit.setFont(new Font("Tahoma", Font.PLAIN, 18));
