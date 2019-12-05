@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,11 +11,23 @@ import javax.swing.JRadioButton;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JCheckBox;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 
 public class Pasta_GUI extends JFrame {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	String pasta = "";
+	String sauce = "";
+	String ingredients = "";
+	String seasonings = "";
 
 	private JPanel contentPane;
 
@@ -70,6 +81,11 @@ public class Pasta_GUI extends JFrame {
 		rdbtnBowtie.setBackground(Color.DARK_GRAY);
 		rdbtnBowtie.setBounds(503, 148, 127, 25);
 		contentPane.add(rdbtnBowtie);
+		
+		ButtonGroup G3 = new ButtonGroup();
+		
+		G3.add(rdbtnBowtie);
+		G3.add(rdbtnPenne);
 		
 		Label label = new Label("Select Sauce");
 		label.setFont(new Font("Dialog", Font.PLAIN, 24));
@@ -178,9 +194,30 @@ public class Pasta_GUI extends JFrame {
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PastaOrder order = new PastaOrder();
+
+				String q = "SELECT order_num FROM dgargu1db.pasta ORDER BY order_num DESC LIMIT 1;";
+				ResultSet rs = QueryClass.query(q);
+				int orderNum = 0;
+				try {
+					rs.next();
+					orderNum = Integer.parseInt(rs.getString("order_num")) + 1;
+					System.out.println("here" + orderNum);
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 				// Adds pasta type
+				String pasta = "";
+				if (rdbtnBowtie.isSelected()) {
+					pasta = "Bowtie";
+				}
+				if (rdbtnPenne.isSelected()) {
+					pasta = "Penne";
+				}
 				
 				
 				// Adds sauce types
@@ -194,7 +231,7 @@ public class Pasta_GUI extends JFrame {
 				if (chckbxPesto.isSelected()) {
 					sauces += "Pesto ";
 				}
-				order.setSauceType(sauces);
+				
 				
 				// Adds ingredients
 				String ingredients = new String();
@@ -210,7 +247,7 @@ public class Pasta_GUI extends JFrame {
 				if (chckbxChicken.isSelected()) {
 					ingredients += "Chicken ";
 				}
-				order.setIngredients(ingredients);
+				
 				
 				// Adds seasonings 
 				String seasonings = new String();
@@ -226,10 +263,10 @@ public class Pasta_GUI extends JFrame {
 				if (chckbxOldBay.isSelected()) {
 					seasonings += "Garlic ";
 				}
-				order.setSeasonings(seasonings);
 				
+				
+				PastaOrder order = new PastaOrder(orderNum,0,pasta,sauces,ingredients,seasonings);
 				order.pushToDatabase();
-				
 				
 			}
 		});
