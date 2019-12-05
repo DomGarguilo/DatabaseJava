@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,14 +13,15 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
-import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
-import javax.swing.JLayeredPane;
-import java.awt.Panel;
 import javax.swing.SwingConstants;
 
 public class Breakfast_Option_GUI_P extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int pancake = 0;
 	int bacon = 0;
 	int sausage = 0;

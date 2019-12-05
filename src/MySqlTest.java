@@ -1,6 +1,5 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class MySqlTest {
 	public static void main(String[] args) throws SQLException {
@@ -39,15 +38,6 @@ public class MySqlTest {
 			System.out.println(order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas);
 		}
 		
-		
-		
-		/*
-		System.out.println("ENter id");
-		Scanner scan = new Scanner(System.in);
-		int tempID = scan.nextInt();
-		scan.close();
-		LoginPage.login(tempID);
-		*/
 
 	}
 
