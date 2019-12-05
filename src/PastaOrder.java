@@ -47,6 +47,15 @@ public class PastaOrder extends Order {
 	public void setSeasonings(String seasonings) {
 		this.seasonings = seasonings;
 	}
+	
+	public void pushToDatabase() {
+        String q = new String();
+        q = "INSERT INTO dgargu1db.pasta (order_num, cust_ID, pasta_type, sauce_type, ingredients, seasonings) "
+                + "VALUES ("+this.getOrderID()+", "+ this.getCustomer()+", "+ this.getPastaType()+", "+this.getSauceType()+", "+this.getIngredients()+", "+this.getSeasonings();
+        System.out.println(q);
+        QueryClass.query(q);
+
+    }
 
 
 

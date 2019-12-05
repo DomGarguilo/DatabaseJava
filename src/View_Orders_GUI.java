@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import javax.swing.JTable;
 
 public class View_Orders_GUI extends JFrame {
 
@@ -46,11 +48,14 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblViewOrders = new JLabel("View Orders");
-		lblViewOrders.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblViewOrders.setBounds(194, 36, 162, 41);
+		lblViewOrders.setHorizontalAlignment(SwingConstants.CENTER);
+		lblViewOrders.setForeground(Color.WHITE);
+		lblViewOrders.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lblViewOrders.setBounds(337, 74, 162, 41);
 		contentPane.add(lblViewOrders);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Employee_GUI egui = new Employee_GUI();
@@ -61,8 +66,7 @@ public class View_Orders_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnBack.setBounds(35, 20, 97, 25);
+		btnBack.setBounds(62, 35, 97, 25);
 		contentPane.add(btnBack);
 	}
-
 }
