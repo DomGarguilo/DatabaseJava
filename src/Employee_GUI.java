@@ -40,7 +40,7 @@ public class Employee_GUI extends JFrame {
 		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
 		contentPane.setForeground(Color.WHITE);
-		contentPane.setBackground(new Color(0, 0, 0));
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

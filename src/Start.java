@@ -12,6 +12,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class Start extends JFrame {
 
@@ -41,7 +42,7 @@ public class Start extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(102, 204, 102));
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -49,18 +50,20 @@ public class Start extends JFrame {
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.setBackground(new Color(51, 102, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 39));
-		btnNewButton.setBounds(127, 155, 192, 64);
+		btnNewButton.setBounds(319, 354, 192, 64);
 
 		contentPane.add(btnNewButton);
 		
 		JLabel lblUser = new JLabel("Enter ID:");
-		lblUser.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		lblUser.setBounds(53, 71, 120, 44);
+		lblUser.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUser.setForeground(Color.WHITE);
+		lblUser.setFont(new Font("Tahoma", Font.BOLD, 28));
+		lblUser.setBounds(170, 193, 201, 44);
 		contentPane.add(lblUser);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		textField.setBounds(178, 71, 208, 43);
+		textField.setBounds(406, 193, 208, 43);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		btnNewButton.addActionListener(new ActionListener() {

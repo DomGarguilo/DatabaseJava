@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class Breakfast_GUI extends JFrame {
 
@@ -38,14 +39,17 @@ public class Breakfast_GUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 720);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
+		contentPane.setForeground(new Color(0, 0, 0));
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Select Food");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblNewLabel.setBounds(217, 13, 145, 45);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lblNewLabel.setBounds(354, 49, 145, 45);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnHomeButton = new JButton("Logout");
@@ -58,7 +62,7 @@ public class Breakfast_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnHomeButton.setBounds(394, 18, 112, 35);
+		btnHomeButton.setBounds(700, 54, 112, 35);
 		contentPane.add(btnHomeButton);
 		
 		JButton btnBackButton = new JButton("Back");
@@ -71,7 +75,7 @@ public class Breakfast_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnBackButton.setBounds(34, 17, 123, 36);
+		btnBackButton.setBounds(55, 53, 123, 36);
 		contentPane.add(btnBackButton);
 		
 		JButton btnNewButton = new JButton("Eggs");
@@ -84,7 +88,7 @@ public class Breakfast_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(34, 146, 116, 45);
+		btnNewButton.setBounds(211, 268, 139, 45);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Pancakes");
@@ -94,7 +98,7 @@ public class Breakfast_GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(203, 146, 139, 45);
+		btnNewButton_1.setBounds(510, 268, 139, 45);
 		contentPane.add(btnNewButton_1);
 	}
 }
