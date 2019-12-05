@@ -102,7 +102,7 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.add(lblBreakfastOrders);
 		
 		textField = new JTextField();
-		textField.setBounds(834, 185, 116, 22);
+		textField.setBounds(817, 187, 116, 22);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -121,7 +121,7 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.add(btnCompleteBreakfastOrder);
 		
 		JButton btnCompletePastaOrder = new JButton("Complete This Pasta Order");
-		btnCompletePastaOrder.setBounds(974, 184, 181, 25);
+		btnCompletePastaOrder.setBounds(951, 184, 204, 25);
 		contentPane.add(btnCompletePastaOrder);
 		btnCompletePastaOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -143,7 +143,7 @@ public class View_Orders_GUI extends JFrame {
 		JLabel lblEnterOrderNumber = new JLabel("Enter Order Number:");
 		lblEnterOrderNumber.setForeground(Color.WHITE);
 		lblEnterOrderNumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblEnterOrderNumber.setBounds(657, 174, 165, 41);
+		lblEnterOrderNumber.setBounds(640, 176, 165, 41);
 		contentPane.add(lblEnterOrderNumber);
 		
 		
