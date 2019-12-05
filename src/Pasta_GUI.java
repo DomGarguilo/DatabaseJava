@@ -203,10 +203,10 @@ public class Pasta_GUI extends JFrame {
 					orderNum = Integer.parseInt(rs.getString("order_num")) + 1;
 					System.out.println("here" + orderNum);
 				} catch (NumberFormatException e1) {
-					// TODO Auto-generated catch block
+					orderNum = 4423;
 					e1.printStackTrace();
 				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
+					orderNum = 4423;
 					e1.printStackTrace();
 				}
 				

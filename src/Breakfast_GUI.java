@@ -99,7 +99,7 @@ public class Breakfast_GUI extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Breakfast_Option_GUI_E eggs = new Breakfast_Option_GUI_E();
+				Breakfast_Option_GUI_P eggs = new Breakfast_Option_GUI_P();
 				eggs.setVisible(true);
 				dispose();
 			}
