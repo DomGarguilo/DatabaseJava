@@ -16,6 +16,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 public class View_Orders_GUI extends JFrame {
 
 	private JPanel contentPane;
@@ -77,8 +78,20 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"Order_Num", "Customer_ID", "Pasta_Type", "Ingredients", "Seasonings"
+			}
+		));
 		scrollPane.setViewportView(table);
+		
+		
 		String q = "SELECT * FROM dgargu1db.pasta";
+		String arr [][] = null;
 		ResultSet rs = QueryClass.query(q);
 		try {
 			while (rs.next()) {
@@ -90,14 +103,15 @@ public class View_Orders_GUI extends JFrame {
 				String seas = rs.getString("seasonings");
 
 				System.out.println(order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas);
+				//{order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas};
+				
 			}
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 //			e1.printStackTrace();
 			System.out.println("oops");
 		}
-		System.out.println();
-
-		System.out.println(rs);
+		System.out.println("Here");
+		//for(String i: arr) {System.out.println(i);}
 	}
 }
