@@ -11,6 +11,8 @@ import java.awt.Font;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
@@ -19,6 +21,9 @@ import java.awt.Panel;
 import javax.swing.SwingConstants;
 
 public class Breakfast_Option_GUI_E extends JFrame {
+	
+	int scramble;
+	int omlette;
 
 	private JPanel contentPane;
 
@@ -29,7 +34,7 @@ public class Breakfast_Option_GUI_E extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Breakfast_Option_GUI_E frame = new Breakfast_Option_GUI_E();//Initalizations 
+					Breakfast_Option_GUI_E frame = new Breakfast_Option_GUI_E(); //Initializations 
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,9 +46,8 @@ public class Breakfast_Option_GUI_E extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Breakfast_Option_GUI_E() {//pulls Option from Breakfast_GUI 
-		System.out.println();
-		
+	public Breakfast_Option_GUI_E() {//pulls Option from Breakfast_GUI
+						
 		//Creates - Frame must always be first before any - buttons / labels / etc....
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 720);
@@ -107,16 +111,16 @@ public class Breakfast_Option_GUI_E extends JFrame {
 		chckbxNewCheckBoxOnion.setBounds(126, 58, 113, 25);
 		P1.add(chckbxNewCheckBoxOnion);
 		
-		JCheckBox chckbxNewCheckBoxSpinach = new JCheckBox("Spinach");
-		chckbxNewCheckBoxSpinach.setFont(new Font("Tahoma", Font.BOLD, 16));
-		chckbxNewCheckBoxSpinach.setBounds(126, 88, 113, 25);
-		P1.add(chckbxNewCheckBoxSpinach);
+		JCheckBox chckbxNewCheckBoxChicken = new JCheckBox("Chicken");
+		chckbxNewCheckBoxChicken.setFont(new Font("Tahoma", Font.BOLD, 16));
+		chckbxNewCheckBoxChicken.setBounds(126, 88, 113, 25);
+		P1.add(chckbxNewCheckBoxChicken);
 		
 		JCheckBox chckbxNewCheckBoxCheese = new JCheckBox("Cheese");
 		chckbxNewCheckBoxCheese.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxNewCheckBoxCheese.setBounds(126, 118, 113, 25);
 		P1.add(chckbxNewCheckBoxCheese);
-		
+				
 		JPanel P2 = new JPanel();
 		P2.setBackground(new Color(47, 79, 79));
 		P2.setBounds(123, 24, 177, 130);
@@ -138,6 +142,12 @@ public class Breakfast_Option_GUI_E extends JFrame {
 		Q4.setBounds(128, 46, 35, 25);
 		P2.add(Q4);
 		
+		ButtonGroup G3 = new ButtonGroup();
+		G3.add(Q1);
+		G3.add(Q2);
+		G3.add(Q3);
+		G3.add(Q4);
+		
 		JLabel lblNewLabel = new JLabel("Quantity");
 		lblNewLabel.setBounds(32, 0, 91, 29);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -152,13 +162,17 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			
 
 			// Buttons Live Here. 
+			
+					
 			JButton scrambledEggButton = new JButton("New button");
-			scrambledEggButton.setBounds(235, 152, 125, 25);
+			scrambledEggButton.setBounds(213, 152, 147, 25);
 			contentPane.add(scrambledEggButton);
 			scrambledEggButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					P2.setVisible(false);
 					P1.setVisible(true);
+					scramble = 1;
+					omlette = 0;
 				}
 			});
 			scrambledEggButton.setText("Scrambled Eggs");
@@ -170,6 +184,8 @@ public class Breakfast_Option_GUI_E extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					P2.setVisible(false);
 					P1.setVisible(true);
+					scramble = 0;
+					omlette = 1;
 				}
 			});
 			omletteButton.setText("Omlette");
@@ -193,7 +209,7 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			panel.setBounds(303, 409, 275, 164);
 			contentPane.add(panel);
 			
-			JLabel label = new JLabel("Suasage Quantity");
+			JLabel label = new JLabel("Sausage Quantity");
 			label.setHorizontalAlignment(SwingConstants.CENTER);
 			label.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			label.setBounds(38, 13, 199, 25);
@@ -260,17 +276,113 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			G2.add(radioButton3Bacon);
 			G2.add(radioButton4Bacon);
 			
-			JButton button = new JButton("Place Order");
-			button.setFont(new Font("Tahoma", Font.BOLD, 20));
-			button.setBounds(357, 597, 168, 41);
-			contentPane.add(button);
+			JButton placeOrder = new JButton("Place Order");
+			placeOrder.setFont(new Font("Tahoma", Font.BOLD, 20));
+			placeOrder.setBounds(357, 597, 168, 41);
+			contentPane.add(placeOrder);
 			
 			JLabel label_2 = new JLabel("Add Sides:");
 			label_2.setForeground(Color.WHITE);
 			label_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 			label_2.setBounds(305, 383, 154, 25);
 			contentPane.add(label_2);
-		
+			
+			placeOrder.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					//order num
+					String q = "SELECT order_num FROM dgargu1db.breakfast ORDER BY order_num DESC LIMIT 1;";
+					ResultSet rs = QueryClass.query(q);
+					int orderNum = 0;
+					try {
+						rs.next();
+						orderNum = Integer.parseInt(rs.getString("order_num")) + 1;
+						System.out.println("here" + orderNum);
+					} catch (NumberFormatException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					int friedEgg = 0;
+					//fried egg
+					if(Q1.isSelected()) {
+			            friedEgg = 1;
+			        } else if(Q2.isSelected()) {
+			        	friedEgg = 2;
+			        } else if(Q3.isSelected()){
+			        	friedEgg = 3;
+			        } else if(Q4.isSelected()){
+			        	friedEgg = 4;
+			        } else {
+			        	System.out.println("error in fried egg count");
+			        }
+			        
+					
+					//ingredients
+					String ingredients = new String();
+					if(chckbxNewCheckBoxMushroom.isSelected()) {
+						ingredients += "Mushroom, ";
+					}
+					if(chckbxNewCheckBoxOnion.isSelected()) {
+						ingredients += "Onion, ";
+					}
+					if(chckbxNewCheckBoxChicken.isSelected()) {
+						ingredients += "Chicken, ";
+					}
+					if(chckbxNewCheckBoxCheese.isSelected()) {
+						ingredients += "Cheese, ";
+					}
+					
+					//bacon
+					int bacon = 0;
+					if(radioButton0Bacon.isSelected()) {
+						bacon = 0;
+			        } else if(radioButton1Bacon.isSelected()) {
+			        	bacon = 1;
+			        } else if(radioButton2Bacon.isSelected()){
+			        	bacon = 2;
+			        } else if(radioButton3Bacon.isSelected()){
+			        	bacon = 3;
+			        } else if(radioButton4Bacon.isSelected()){
+			        	bacon = 4;
+			        } else {
+			        	System.out.println("error in fried egg count");
+			        }
+					
+					//sausage
+					int sausage = 0;
+					if(radioButton0Sausage.isSelected()) {
+						sausage = 0;
+			        } else if(radioButton1Sausage.isSelected()) {
+			        	sausage = 1;
+			        } else if(radioButton2Sausage.isSelected()){
+			        	sausage = 2;
+			        } else if(radioButton3Sausage.isSelected()){
+			        	sausage = 3;
+			        } else if(radioButton4Sausage.isSelected()){
+			        	sausage = 4;
+			        } else {
+			        	System.out.println("error in fried egg count");
+			        }
+			        
+					
+					
+					
+					BreakfastOrder order = new BreakfastOrder(orderNum,0,0,friedEgg,omlette,scramble,"none",ingredients,bacon,sausage);
+					
+					//order.setIngredients(ingredients);
+					order.pushToDatabase();
+					System.out.println(order.getIngredients());
+					/*
+					Breakfast_GUI bk = new Breakfast_GUI();
+					bk.setVisible(true);
+					dispose();
+					*/
+				}
+			});
 		
 	}
 }

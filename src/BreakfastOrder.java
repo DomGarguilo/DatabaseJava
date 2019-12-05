@@ -3,8 +3,8 @@ public class BreakfastOrder extends Order {
 	
 	private int pancake_quantity;
 	private int fried_egg_quantity;
-	private boolean omlette; //false = no omlette & vise versa
-	private boolean scrambled_eggs; //false = no omlette & vise versa
+	private int omlette; //false = no omlette & vise versa
+	private int scrambled_eggs; //false = no omlette & vise versa
 	private String ingredients;
 	private String seasonings;
 	private int bacon_quantity;
@@ -12,7 +12,7 @@ public class BreakfastOrder extends Order {
 	
 	
 
-	public BreakfastOrder(int orderID, int customer, int pancake_quantity, int fried_egg_quantity, boolean omlette, boolean scrambled_eggs,
+	public BreakfastOrder(int orderID, int customer, int pancake_quantity, int fried_egg_quantity, int omlette, int scrambled_eggs,
 			String ingredients, String seasonings, int bacon_quantity, int sausage_quantity) {
 		
 		super(orderID, customer);
@@ -25,8 +25,30 @@ public class BreakfastOrder extends Order {
 		this.setBacon_quantity(bacon_quantity);
 		this.setSausage_quantity(sausage_quantity);
 	}
+	
+	//default constructor
+	public BreakfastOrder() {
+		super(0, 0);
+		this.setPancake_quantity(0);
+		this.setFried_egg_quantity(0);
+		this.setOmlette(0);
+		this.setScrambled_eggs(0);
+		this.setIngredients("");
+		this.setSeasonings("");
+		this.setBacon_quantity(0);
+		this.setSausage_quantity(0);
+	}
+	
+	public void pushToDatabase() {
+		String q = new String();
+		q = "INSERT INTO `dgargu1db`.`breakfast` (`order_num`, `cust_ID`, `pancake_quantity`, `fried_egg_quantity`, `omlette`, `scrambled_eggs`, `ingredients`, `seasonings`, `bacon_quantity`, `sausage_quantity`) "
+				+ "VALUES ("+this.getOrderID()+", "+ this.getCustomer()+", "+ this.getPancake_quantity()+", "+this.getFried_egg_quantity()+", "
+				+ this.getOmlette()+", "+this.getScrambled_eggs()+", '"+this.getSeasonings()+"', '"+this.getIngredients()+"', "
+				+ this.getBacon_quantity()+", "+this.getSausage_quantity()+");";
+		System.out.println(q);
+		QueryClass.update(q);
 
-
+	}
 
 	public int getPancake_quantity() {
 		return pancake_quantity;
@@ -40,16 +62,16 @@ public class BreakfastOrder extends Order {
 	public void setFried_egg_quantity(int fried_egg_quantity) {
 		this.fried_egg_quantity = fried_egg_quantity;
 	}
-	public boolean isOmlette() {
+	public int getOmlette() {
 		return omlette;
 	}
-	public void setOmlette(boolean omlette) {
+	public void setOmlette(int omlette) {
 		this.omlette = omlette;
 	}
-	public boolean isScrambled_eggs() {
+	public int getScrambled_eggs() {
 		return scrambled_eggs;
 	}
-	public void setScrambled_eggs(boolean scrambled_eggs) {
+	public void setScrambled_eggs(int scrambled_eggs) {
 		this.scrambled_eggs = scrambled_eggs;
 	}
 	public String getIngredients() {
