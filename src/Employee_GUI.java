@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -76,5 +78,18 @@ public class Employee_GUI extends JFrame {
 		});
 		btnViewIngredientStatus.setBounds(287, 198, 308, 49);
 		contentPane.add(btnViewIngredientStatus);
+		
+		JButton btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Start start = new Start();
+				start.setVisible(true);
+				dispose();
+			}
+		});
+		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnLogout.setBounds(287, 513, 308, 42);
+		contentPane.add(btnLogout);
+		
 	}
 }

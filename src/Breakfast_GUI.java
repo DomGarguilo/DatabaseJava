@@ -96,6 +96,9 @@ public class Breakfast_GUI extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Breakfast_Option_GUI_E eggs = new Breakfast_Option_GUI_E();
+				eggs.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton_1.setBounds(510, 268, 139, 45);
