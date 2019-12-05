@@ -49,7 +49,7 @@ public class View_Orders_GUI extends JFrame {
 	public View_Orders_GUI() {
 		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1271, 719);
+		setBounds(100, 100, 1564, 751);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(128, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -60,7 +60,7 @@ public class View_Orders_GUI extends JFrame {
 		lblViewOrders.setHorizontalAlignment(SwingConstants.CENTER);
 		lblViewOrders.setForeground(Color.WHITE);
 		lblViewOrders.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblViewOrders.setBounds(337, 74, 162, 41);
+		lblViewOrders.setBounds(687, 69, 162, 41);
 		contentPane.add(lblViewOrders);
 		
 		JButton btnBack = new JButton("Back");
@@ -68,9 +68,6 @@ public class View_Orders_GUI extends JFrame {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Employee_GUI egui = new Employee_GUI();
-				// Optional - Alert Message informing Employee about any Unsaved Changes to
-				// Status.
-				// "Unsaved Changes made - Continue or Correct"
 				egui.setVisible(true);
 				dispose();
 			}
@@ -79,7 +76,7 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.add(btnBack);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(62, 228, 742, 156);
+		scrollPane.setBounds(413, 227, 742, 156);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -95,7 +92,7 @@ public class View_Orders_GUI extends JFrame {
 		JLabel lblPastaOrders = new JLabel("Pasta Orders:");
 		lblPastaOrders.setForeground(Color.WHITE);
 		lblPastaOrders.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblPastaOrders.setBounds(62, 171, 162, 41);
+		lblPastaOrders.setBounds(413, 173, 162, 41);
 		contentPane.add(lblPastaOrders);
 		
 		JLabel lblBreakfastOrders = new JLabel("Breakfast Orders:");
@@ -105,7 +102,7 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.add(lblBreakfastOrders);
 		
 		textField = new JTextField();
-		textField.setBounds(494, 185, 116, 22);
+		textField.setBounds(834, 185, 116, 22);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -120,11 +117,11 @@ public class View_Orders_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnCompleteBreakfastOrder.setBounds(627, 434, 227, 25);
+		btnCompleteBreakfastOrder.setBounds(1238, 434, 227, 25);
 		contentPane.add(btnCompleteBreakfastOrder);
 		
 		JButton btnCompletePastaOrder = new JButton("Complete This Pasta Order");
-		btnCompletePastaOrder.setBounds(623, 184, 181, 25);
+		btnCompletePastaOrder.setBounds(974, 184, 181, 25);
 		contentPane.add(btnCompletePastaOrder);
 		btnCompletePastaOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -139,25 +136,25 @@ public class View_Orders_GUI extends JFrame {
 		
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(499, 435, 116, 22);
+		textField_1.setBounds(1095, 435, 116, 22);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		JLabel lblEnterOrderNumber = new JLabel("Enter Order Number:");
 		lblEnterOrderNumber.setForeground(Color.WHITE);
 		lblEnterOrderNumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblEnterOrderNumber.setBounds(317, 174, 165, 41);
+		lblEnterOrderNumber.setBounds(657, 174, 165, 41);
 		contentPane.add(lblEnterOrderNumber);
 		
 		
 		JLabel label = new JLabel("Enter Order Number:");
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		label.setBounds(321, 424, 165, 41);
+		label.setBounds(918, 424, 165, 41);
 		contentPane.add(label);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(66, 475, 1105, 184);
+		scrollPane_1.setBounds(66, 475, 1399, 184);
 		contentPane.add(scrollPane_1);
 		
 		table_1 = new JTable();
