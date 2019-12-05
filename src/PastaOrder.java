@@ -5,7 +5,16 @@ public class PastaOrder extends Order {
 	private String sauceType;
 	private String ingredients;
 	private String seasonings;
-
+	
+	
+	public PastaOrder() {
+		super(0, 0);
+		this.setPastaType("");
+		this.setSauceType("");
+		this.setIngredients("");
+		this.setSeasonings("");
+	}
+	
 	public PastaOrder(int orderID, int customer, String pastaType, String sauceType, String ingredients, String seasonings) {
 		super(orderID, customer);
 		this.setPastaType(pastaType);
