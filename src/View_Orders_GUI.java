@@ -84,7 +84,7 @@ public class View_Orders_GUI extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"Order_Num", "Customer_ID", "Pasta_Type", "Ingredients", "Seasonings"
+				"Order_Num", "Pasta_Type", "Ingredients", "Seasonings"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -162,7 +162,7 @@ public class View_Orders_GUI extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"Order_Num", "Customer_ID", "Pancake_Quantity", "Fried_Egg Quantity", "Omlette", "Scrambled_Eggs", "Ingredients", "Seasonings", "Bacon_Quantity", "Sausage_Quantity"
+				"Order_Num", "Pancake_Quantity", "Fried_Egg Quantity", "Omlette", "Scrambled_Eggs", "Ingredients", "Seasonings", "Bacon_Quantity", "Sausage_Quantity"
 			}
 		));
 		scrollPane_1.setViewportView(table_1);
@@ -177,15 +177,14 @@ public class View_Orders_GUI extends JFrame {
 		try {
 			while (rs.next()) {
 				String order = rs.getString("order_num");
-				String ID = rs.getString("cust_ID");
 				String pasta = rs.getString("pasta_type");
 				String sauce = rs.getString("sauce_type");
 				String ingr = rs.getString("ingredients");
 				String seas = rs.getString("seasonings");
 
-				System.out.println(order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas);
+				System.out.println(order + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas);
 				
-				model.addRow(new String[]{order ,ID, pasta , sauce, ingr , seas});
+				model.addRow(new String[]{order , pasta , sauce, ingr , seas});
 				
 			}
 		} catch (SQLException e1) {
@@ -203,7 +202,6 @@ public class View_Orders_GUI extends JFrame {
 		try {
 			while (rs2.next()) {
 				String order = rs2.getString("order_num");
-				String ID = rs2.getString("cust_ID");
 				String pan = rs2.getString("pancake_quantity");
 				String feq = rs2.getString("fried_egg_quantity");
 				String om = rs2.getString("omlette");
@@ -214,7 +212,7 @@ public class View_Orders_GUI extends JFrame {
 				String sq = rs2.getString("sausage_quantity");
 
 				System.out.println(order);
-				model2.addRow(new String[]{order ,ID, pan,feq,om,se,ing,seas,bq,sq});
+				model2.addRow(new String[]{order, pan, feq, om, se, ing, seas, bq, sq});
 				
 			}
 		} catch (SQLException e1) {
