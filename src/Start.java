@@ -94,7 +94,6 @@ public class Start extends JFrame {
 					
 				}
 			
-				//System.out.println("Fuck");
 				
 		});
 }}
