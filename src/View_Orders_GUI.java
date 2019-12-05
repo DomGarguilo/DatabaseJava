@@ -13,10 +13,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class View_Orders_GUI extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -68,5 +70,12 @@ public class View_Orders_GUI extends JFrame {
 		});
 		btnBack.setBounds(62, 35, 97, 25);
 		contentPane.add(btnBack);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(62, 228, 742, 399);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
 	}
 }
