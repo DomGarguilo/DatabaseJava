@@ -14,7 +14,8 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 public class View_Orders_GUI extends JFrame {
 
 	private JPanel contentPane;
@@ -77,5 +78,26 @@ public class View_Orders_GUI extends JFrame {
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
+		String q = "SELECT * FROM dgargu1db.pasta";
+		ResultSet rs = QueryClass.query(q);
+		try {
+			while (rs.next()) {
+				String order = rs.getString("order_num");
+				String ID = rs.getString("cust_ID");
+				String pasta = rs.getString("pasta_type");
+				String sauce = rs.getString("sauce_type");
+				String ingr = rs.getString("ingredients");
+				String seas = rs.getString("seasonings");
+
+				System.out.println(order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas);
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+			System.out.println("oops");
+		}
+		System.out.println();
+
+		System.out.println(rs);
 	}
 }
