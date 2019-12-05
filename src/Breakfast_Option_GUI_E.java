@@ -22,9 +22,10 @@ import javax.swing.SwingConstants;
 
 public class Breakfast_Option_GUI_E extends JFrame {
 	
-	int scramble;
-	int omlette;
-
+	int scramble = 0;
+	int omlette = 0;
+	int friedEgg = 0;
+	
 	private JPanel contentPane;
 
 	/**
@@ -173,6 +174,7 @@ public class Breakfast_Option_GUI_E extends JFrame {
 					P1.setVisible(true);
 					scramble = 1;
 					omlette = 0;
+					friedEgg = 0;
 				}
 			});
 			scrambledEggButton.setText("Scrambled Eggs");
@@ -186,6 +188,11 @@ public class Breakfast_Option_GUI_E extends JFrame {
 					P1.setVisible(true);
 					scramble = 0;
 					omlette = 1;
+					friedEgg = 0;
+					Q1.setSelected(false);
+					Q2.setSelected(false);
+					Q3.setSelected(false);
+					Q4.setSelected(false);
 				}
 			});
 			omletteButton.setText("Omlette");
@@ -310,12 +317,20 @@ public class Breakfast_Option_GUI_E extends JFrame {
 					//fried egg
 					if(Q1.isSelected()) {
 			            friedEgg = 1;
+			            scramble = 0;
+			        	omlette = 0;
 			        } else if(Q2.isSelected()) {
 			        	friedEgg = 2;
+			        	scramble = 0;
+			        	omlette = 0;
 			        } else if(Q3.isSelected()){
 			        	friedEgg = 3;
+			        	scramble = 0;
+			        	omlette = 0;
 			        } else if(Q4.isSelected()){
 			        	friedEgg = 4;
+			        	scramble = 0;
+			        	omlette = 0;
 			        } else {
 			        	System.out.println("error in fried egg count");
 			        }
