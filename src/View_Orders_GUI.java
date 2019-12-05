@@ -104,18 +104,38 @@ public class View_Orders_GUI extends JFrame {
 		lblBreakfastOrders.setBounds(66, 421, 209, 41);
 		contentPane.add(lblBreakfastOrders);
 		
-		JButton btnCompleteBreakfastOrder = new JButton("Complete Breakfast Order");
-		btnCompleteBreakfastOrder.setBounds(627, 434, 181, 25);
-		contentPane.add(btnCompleteBreakfastOrder);
-		
-		JButton btnCompletePastaOrder = new JButton("Complete Pasta Order");
-		btnCompletePastaOrder.setBounds(623, 184, 181, 25);
-		contentPane.add(btnCompletePastaOrder);
-		
 		textField = new JTextField();
 		textField.setBounds(494, 185, 116, 22);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		JButton btnCompleteBreakfastOrder = new JButton("Complete This Breakfast Order");
+		btnCompleteBreakfastOrder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String q = "DELETE FROM dgargu1db.breakfast WHERE order_num="+ textField.getText() +";";
+				QueryClass.update(q);
+				View_Orders_GUI cg = new View_Orders_GUI();
+				cg.setVisible(true);
+				dispose();
+			}
+		});
+		btnCompleteBreakfastOrder.setBounds(627, 434, 227, 25);
+		contentPane.add(btnCompleteBreakfastOrder);
+		
+		JButton btnCompletePastaOrder = new JButton("Complete This Pasta Order");
+		btnCompletePastaOrder.setBounds(623, 184, 181, 25);
+		contentPane.add(btnCompletePastaOrder);
+		btnCompletePastaOrder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String q = "DELETE FROM dgargu1db.pasta WHERE order_num="+ textField_1.getText() +";";
+				QueryClass.update(q);
+				View_Orders_GUI cg = new View_Orders_GUI();
+				cg.setVisible(true);
+				dispose();
+			}
+		});
+		
+		
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(499, 435, 116, 22);
@@ -127,6 +147,7 @@ public class View_Orders_GUI extends JFrame {
 		lblEnterOrderNumber.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblEnterOrderNumber.setBounds(317, 174, 165, 41);
 		contentPane.add(lblEnterOrderNumber);
+		
 		
 		JLabel label = new JLabel("Enter Order Number:");
 		label.setForeground(Color.WHITE);
@@ -200,14 +221,10 @@ public class View_Orders_GUI extends JFrame {
 			}
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-//			e1.printStackTrace();
+			// e1.printStackTrace();
 			System.out.println("oops");
 		}
 		System.out.println("Here");
 		
-		
-//		model.addRow(new String[] {"This","Table","is","nice","ok"});
-		//for(String i: arr) {System.out.println(i);}
-		//table
 	}
 }
