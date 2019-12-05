@@ -179,7 +179,7 @@ public class Pasta_GUI extends JFrame {
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Pasta_GUI bk = new Pasta_GUI();
+				Customer_GUI bk = new Customer_GUI();
 				bk.setVisible(true);
 				dispose();
 			}
