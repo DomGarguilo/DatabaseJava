@@ -17,6 +17,7 @@ import javax.swing.JScrollPane;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 public class View_Orders_GUI extends JFrame {
 
 	private JPanel contentPane;
@@ -80,8 +81,6 @@ public class View_Orders_GUI extends JFrame {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null},
-				{null, null, null, null, null},
 			},
 			new String[] {
 				"Order_Num", "Customer_ID", "Pasta_Type", "Ingredients", "Seasonings"
@@ -89,10 +88,13 @@ public class View_Orders_GUI extends JFrame {
 		));
 		scrollPane.setViewportView(table);
 		
+		DefaultTableModel model = (DefaultTableModel) table.getModel();//Model here
+
 		
 		String q = "SELECT * FROM dgargu1db.pasta";
 		String arr [][] = null;
 		ResultSet rs = QueryClass.query(q);
+		
 		try {
 			while (rs.next()) {
 				String order = rs.getString("order_num");
@@ -103,7 +105,8 @@ public class View_Orders_GUI extends JFrame {
 				String seas = rs.getString("seasonings");
 
 				System.out.println(order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas);
-				//{order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas};
+				
+				model.addRow(new String[]{order ,ID, pasta , sauce, ingr , seas});
 				
 			}
 		} catch (SQLException e1) {
@@ -112,6 +115,8 @@ public class View_Orders_GUI extends JFrame {
 			System.out.println("oops");
 		}
 		System.out.println("Here");
+//		model.addRow(new String[] {"This","Table","is","nice","ok"});
 		//for(String i: arr) {System.out.println(i);}
+		//table
 	}
 }
