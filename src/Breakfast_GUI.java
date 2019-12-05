@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,6 +13,10 @@ import javax.swing.SwingConstants;
 
 public class Breakfast_GUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -49,7 +52,7 @@ public class Breakfast_GUI extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(354, 49, 145, 45);
+		lblNewLabel.setBounds(368, 49, 145, 45);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnHomeButton = new JButton("Logout");
@@ -88,7 +91,7 @@ public class Breakfast_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setBounds(211, 268, 139, 45);
+		btnNewButton.setBounds(179, 268, 201, 107);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Pancakes");
@@ -101,7 +104,7 @@ public class Breakfast_GUI extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_1.setBounds(510, 268, 139, 45);
+		btnNewButton_1.setBounds(500, 268, 201, 107);
 		contentPane.add(btnNewButton_1);
 	}
 }
