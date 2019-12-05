@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -17,10 +16,13 @@ import javax.swing.JScrollPane;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import javax.swing.JTextField;
 public class View_Orders_GUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTable table;
 	private JTextField textField;
@@ -171,7 +173,7 @@ public class View_Orders_GUI extends JFrame {
 
 		
 		String q = "SELECT * FROM dgargu1db.pasta";
-		String arr [][] = null;
+		//String arr [][] = null;
 		ResultSet rs = QueryClass.query(q);
 		
 		try {

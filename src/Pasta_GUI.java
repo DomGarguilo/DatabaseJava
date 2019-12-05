@@ -73,6 +73,7 @@ public class Pasta_GUI extends JFrame {
 		rdbtnPenne.setForeground(Color.WHITE);
 		rdbtnPenne.setBackground(Color.DARK_GRAY);
 		rdbtnPenne.setBounds(236, 148, 127, 25);
+		rdbtnPenne.setEnabled(Tools.getIngredientStatus("Penne"));
 		contentPane.add(rdbtnPenne);
 		
 		JRadioButton rdbtnBowtie = new JRadioButton("Bowtie");
@@ -80,6 +81,7 @@ public class Pasta_GUI extends JFrame {
 		rdbtnBowtie.setForeground(Color.WHITE);
 		rdbtnBowtie.setBackground(Color.DARK_GRAY);
 		rdbtnBowtie.setBounds(503, 148, 127, 25);
+		rdbtnBowtie.setEnabled(Tools.getIngredientStatus("Bowtie"));
 		contentPane.add(rdbtnBowtie);
 		
 		ButtonGroup G3 = new ButtonGroup();
@@ -104,6 +106,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxAlfredo.setBackground(Color.DARK_GRAY);
 		chckbxAlfredo.setForeground(Color.WHITE);
 		chckbxAlfredo.setBounds(358, 243, 113, 25);
+		chckbxAlfredo.setEnabled(Tools.getIngredientStatus("Alfredo"));
 		contentPane.add(chckbxAlfredo);
 		
 		JCheckBox chckbxPesto = new JCheckBox("Pesto");
@@ -111,6 +114,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxPesto.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxPesto.setBackground(Color.DARK_GRAY);
 		chckbxPesto.setBounds(568, 243, 113, 25);
+		chckbxPesto.setEnabled(Tools.getIngredientStatus("Pesto"));
 		contentPane.add(chckbxPesto);
 		
 		JCheckBox chckbxMarinara = new JCheckBox("Marinara");
@@ -118,6 +122,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxMarinara.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxMarinara.setBackground(Color.DARK_GRAY);
 		chckbxMarinara.setBounds(172, 243, 113, 25);
+		chckbxMarinara.setEnabled(Tools.getIngredientStatus("Marinara"));
 		contentPane.add(chckbxMarinara);
 		
 		Label label_2 = new Label("Select Ingredients");
@@ -131,6 +136,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxCheese.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxCheese.setBackground(Color.DARK_GRAY);
 		chckbxCheese.setBounds(236, 345, 113, 25);
+		chckbxCheese.setEnabled(Tools.getIngredientStatus("Cheese"));
 		contentPane.add(chckbxCheese);
 		
 		JCheckBox chckbxMushroom = new JCheckBox("Mushroom");
@@ -138,6 +144,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxMushroom.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxMushroom.setBackground(Color.DARK_GRAY);
 		chckbxMushroom.setBounds(517, 345, 113, 25);
+		chckbxMushroom.setEnabled(Tools.getIngredientStatus("Mushroom"));
 		contentPane.add(chckbxMushroom);
 		
 		JCheckBox chckbxOnions = new JCheckBox("Onions");
@@ -145,6 +152,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxOnions.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxOnions.setBackground(Color.DARK_GRAY);
 		chckbxOnions.setBounds(236, 395, 113, 25);
+		chckbxOnions.setEnabled(Tools.getIngredientStatus("Onion"));
 		contentPane.add(chckbxOnions);
 		
 		JCheckBox chckbxChicken = new JCheckBox("Chicken");
@@ -152,6 +160,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxChicken.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxChicken.setBackground(Color.DARK_GRAY);
 		chckbxChicken.setBounds(517, 395, 113, 25);
+		chckbxChicken.setEnabled(Tools.getIngredientStatus("Chicken"));
 		contentPane.add(chckbxChicken);
 		
 		Label label_3 = new Label("Select Seasonings");
@@ -165,6 +174,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxOldBay.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxOldBay.setBackground(Color.DARK_GRAY);
 		chckbxOldBay.setBounds(236, 489, 113, 25);
+		chckbxOldBay.setEnabled(Tools.getIngredientStatus("Old Bay"));
 		contentPane.add(chckbxOldBay);
 		
 		JCheckBox chckbxSalt = new JCheckBox("Salt");
@@ -172,6 +182,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxSalt.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxSalt.setBackground(Color.DARK_GRAY);
 		chckbxSalt.setBounds(517, 489, 113, 25);
+		chckbxSalt.setEnabled(Tools.getIngredientStatus("Salt"));
 		contentPane.add(chckbxSalt);
 		
 		JCheckBox chckbxCajun = new JCheckBox("Cajun");
@@ -179,6 +190,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxCajun.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxCajun.setBackground(Color.DARK_GRAY);
 		chckbxCajun.setBounds(236, 547, 113, 25);
+		chckbxCajun.setEnabled(Tools.getIngredientStatus("Cajun"));
 		contentPane.add(chckbxCajun);
 		
 		JCheckBox chckbxGarlic = new JCheckBox("Garlic");
@@ -186,6 +198,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxGarlic.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxGarlic.setBackground(Color.DARK_GRAY);
 		chckbxGarlic.setBounds(517, 547, 113, 25);
+		chckbxGarlic.setEnabled(Tools.getIngredientStatus("Garlic"));
 		contentPane.add(chckbxGarlic);
 		
 		

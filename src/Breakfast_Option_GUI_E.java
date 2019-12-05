@@ -107,21 +107,25 @@ public class Breakfast_Option_GUI_E extends JFrame {
 		JCheckBox chckbxNewCheckBoxMushroom = new JCheckBox("Mushroom");
 		chckbxNewCheckBoxMushroom.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxNewCheckBoxMushroom.setBounds(126, 28, 113, 25);
+		chckbxNewCheckBoxMushroom.setEnabled(Tools.getIngredientStatus("Mushroom"));
 		P1.add(chckbxNewCheckBoxMushroom);
 		
 		JCheckBox chckbxNewCheckBoxOnion = new JCheckBox("Onion");
 		chckbxNewCheckBoxOnion.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxNewCheckBoxOnion.setBounds(126, 58, 113, 25);
+		chckbxNewCheckBoxOnion.setEnabled(Tools.getIngredientStatus("Onion"));
 		P1.add(chckbxNewCheckBoxOnion);
 		
 		JCheckBox chckbxNewCheckBoxChicken = new JCheckBox("Chicken");
 		chckbxNewCheckBoxChicken.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxNewCheckBoxChicken.setBounds(126, 88, 113, 25);
+		chckbxNewCheckBoxChicken.setEnabled(Tools.getIngredientStatus("Chicken"));
 		P1.add(chckbxNewCheckBoxChicken);
 		
 		JCheckBox chckbxNewCheckBoxCheese = new JCheckBox("Cheese");
 		chckbxNewCheckBoxCheese.setFont(new Font("Tahoma", Font.BOLD, 16));
 		chckbxNewCheckBoxCheese.setBounds(126, 118, 113, 25);
+		chckbxNewCheckBoxCheese.setEnabled(Tools.getIngredientStatus("Cheese"));
 		P1.add(chckbxNewCheckBoxCheese);
 				
 		JPanel P2 = new JPanel();
@@ -133,16 +137,19 @@ public class Breakfast_Option_GUI_E extends JFrame {
 		
 		JRadioButton Q1 = new JRadioButton("1");
 		Q1.setBounds(8, 46, 35, 25);
+		Q1.setEnabled(Tools.getIngredientStatus("Egg"));
 		P2.add(Q1);
-		
 		JRadioButton Q2 = new JRadioButton("2");
 		Q2.setBounds(48, 46, 35, 25);
+		Q2.setEnabled(Tools.getIngredientStatus("Egg"));
 		P2.add(Q2);
 		JRadioButton Q3 = new JRadioButton("3");
 		Q3.setBounds(88, 46, 35, 25);
+		Q3.setEnabled(Tools.getIngredientStatus("Egg"));
 		P2.add(Q3);
 		JRadioButton Q4 = new JRadioButton("4");
 		Q4.setBounds(128, 46, 35, 25);
+		Q4.setEnabled(Tools.getIngredientStatus("Egg"));
 		P2.add(Q4);
 		
 		ButtonGroup G3 = new ButtonGroup();
@@ -169,6 +176,7 @@ public class Breakfast_Option_GUI_E extends JFrame {
 					
 			JButton scrambledEggButton = new JButton("New button");
 			scrambledEggButton.setBounds(213, 152, 147, 25);
+			scrambledEggButton.setEnabled(Tools.getIngredientStatus("Egg"));
 			contentPane.add(scrambledEggButton);
 			scrambledEggButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -183,6 +191,7 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			
 			JButton omletteButton = new JButton("New button");
 			omletteButton.setBounds(393, 152, 96, 25);
+			omletteButton.setEnabled(Tools.getIngredientStatus("Egg"));
 			contentPane.add(omletteButton);
 			omletteButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -201,6 +210,7 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			
 			JButton friedEggButton = new JButton("New button");
 			friedEggButton.setBounds(517, 152, 93, 25);
+			friedEggButton.setEnabled(Tools.getIngredientStatus("Egg"));
 			contentPane.add(friedEggButton);
 			
 			
@@ -235,22 +245,27 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			
 			JRadioButton radioButton1Sausage = new JRadioButton("1");
 			radioButton1Sausage.setBounds(70, 47, 35, 25);
+			radioButton1Sausage.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(radioButton1Sausage);
 			
 			JRadioButton radioButton2Sausage = new JRadioButton("2");
 			radioButton2Sausage.setBounds(110, 47, 35, 25);
+			radioButton2Sausage.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(radioButton2Sausage);
 			
 			JRadioButton radioButton3Sausage = new JRadioButton("3");
 			radioButton3Sausage.setBounds(150, 47, 35, 25);
+			radioButton3Sausage.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(radioButton3Sausage);
 			
 			JRadioButton radioButton4Sausage = new JRadioButton("4");
 			radioButton4Sausage.setBounds(190, 47, 35, 25);
+			radioButton4Sausage.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(radioButton4Sausage);
 			
 			JRadioButton radioButton0Sausage = new JRadioButton("0");
 			radioButton0Sausage.setBounds(31, 47, 35, 25);
+			radioButton0Sausage.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(radioButton0Sausage);
 			
 			G1.add(radioButton0Sausage);
@@ -261,22 +276,27 @@ public class Breakfast_Option_GUI_E extends JFrame {
 			
 			JRadioButton radioButton4Bacon = new JRadioButton("4");
 			radioButton4Bacon.setBounds(190, 127, 35, 25);
+			radioButton4Bacon.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(radioButton4Bacon);
 			
 			JRadioButton radioButton3Bacon = new JRadioButton("3");
 			radioButton3Bacon.setBounds(150, 127, 35, 25);
+			radioButton3Bacon.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(radioButton3Bacon);
 			
 			JRadioButton radioButton2Bacon = new JRadioButton("2");
 			radioButton2Bacon.setBounds(110, 127, 35, 25);
+			radioButton2Bacon.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(radioButton2Bacon);
 			
 			JRadioButton radioButton1Bacon = new JRadioButton("1");
 			radioButton1Bacon.setBounds(70, 127, 35, 25);
+			radioButton1Bacon.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(radioButton1Bacon);
 			
 			JRadioButton radioButton0Bacon = new JRadioButton("0");
 			radioButton0Bacon.setBounds(31, 127, 35, 25);
+			radioButton0Bacon.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(radioButton0Bacon);
 			
 			G2.add(radioButton0Bacon);

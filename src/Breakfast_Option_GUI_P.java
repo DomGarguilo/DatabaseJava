@@ -101,28 +101,27 @@ public class Breakfast_Option_GUI_P extends JFrame {
 		
 		JRadioButton Q1 = new JRadioButton("1");
 		Q1.setBounds(8, 9, 35, 25);
+		Q1.setEnabled(Tools.getIngredientStatus("Pancakes"));
 		P2.add(Q1);
 		
 		JRadioButton Q2 = new JRadioButton("2");
 		Q2.setBounds(48, 9, 35, 25);
+		Q2.setEnabled(Tools.getIngredientStatus("Pancakes"));
 		P2.add(Q2);
 		JRadioButton Q3 = new JRadioButton("3");
 		Q3.setBounds(88, 9, 35, 25);
+		Q3.setEnabled(Tools.getIngredientStatus("Pancakes"));
 		P2.add(Q3);
 		JRadioButton Q4 = new JRadioButton("4");
 		Q4.setBounds(128, 9, 35, 25);
+		Q4.setEnabled(Tools.getIngredientStatus("Pancakes"));
 		P2.add(Q4);
-		
-		
+				
 		G1.add(Q1);
 		G1.add(Q2);
 		G1.add(Q3);
 		G1.add(Q4);
-		
-		
-		
-		
-			
+					
 			JPanel panel = new JPanel();
 			panel.setBounds(303, 240, 275, 164);
 			contentPane.add(panel);
@@ -142,42 +141,52 @@ public class Breakfast_Option_GUI_P extends JFrame {
 			
 			JRadioButton S1 = new JRadioButton("1");
 			S1.setBounds(74, 47, 35, 25);
+			S1.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(S1);
 			
 			JRadioButton S2 = new JRadioButton("2");
 			S2.setBounds(114, 47, 35, 25);
+			S2.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(S2);
 			
 			JRadioButton S3 = new JRadioButton("3");
 			S3.setBounds(154, 47, 35, 25);
+			S3.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(S3);
 			
 			JRadioButton S4 = new JRadioButton("4");
 			S4.setBounds(194, 47, 35, 25);
+			S4.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(S4);
 			
 			JRadioButton B1 = new JRadioButton("1");
 			B1.setBounds(76, 127, 35, 25);
+			B1.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(B1);
 			
 			JRadioButton B2 = new JRadioButton("2");
 			B2.setBounds(116, 127, 35, 25);
+			B2.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(B2);
 			
 			JRadioButton B3 = new JRadioButton("3");
 			B3.setBounds(156, 127, 35, 25);
+			B3.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(B3);
 			
 			JRadioButton B4 = new JRadioButton("4");
 			B4.setBounds(196, 127, 35, 25);
+			B4.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(B4);
 			
 			JRadioButton S0 = new JRadioButton("0");
 			S0.setBounds(35, 47, 35, 25);
+			S0.setEnabled(Tools.getIngredientStatus("Sausage"));
 			panel.add(S0);
 			
 			JRadioButton B0 = new JRadioButton("0");
 			B0.setBounds(35, 127, 35, 25);
+			B0.setEnabled(Tools.getIngredientStatus("Bacon"));
 			panel.add(B0);
 			
 			G2.add(S0);

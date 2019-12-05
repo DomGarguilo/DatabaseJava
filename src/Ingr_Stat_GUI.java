@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,18 +7,17 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Color;
-import javax.swing.JTable;
-import javax.swing.JList;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
-import javax.swing.JToggleButton;
 import javax.swing.JCheckBox;
-import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Ingr_Stat_GUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -301,6 +299,14 @@ public class Ingr_Stat_GUI extends JFrame {
 		checkBoxOnion.setSelected(Tools.getIngredientStatus("Onion")); // Initializations Status based on Database
 		checkBoxOnion.setBounds(423, 409, 82, 25);
 		contentPane.add(checkBoxOnion);
+		
+		JCheckBox checkBoxGarlic = new JCheckBox("Status");
+		checkBoxGarlic.setSelected(false);
+		checkBoxGarlic.setForeground(Color.WHITE);
+		checkBoxGarlic.setBackground(Color.DARK_GRAY);
+		checkBoxGarlic.setSelected(Tools.getIngredientStatus("Garlic")); // Initializations Status based on Database
+		checkBoxGarlic.setBounds(423, 593, 82, 25);
+		contentPane.add(checkBoxGarlic);
 
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
@@ -337,11 +343,12 @@ public class Ingr_Stat_GUI extends JFrame {
 				Tools.setIngredientStatus("Pesto", checkBoxPesto.isSelected());
 				Tools.setIngredientStatus("Salt", checkBoxSalt.isSelected());
 				Tools.setIngredientStatus("Sausage", checkBoxSausage.isSelected());
+				Tools.setIngredientStatus("Garlic", checkBoxGarlic.isSelected());
 				
 			}
 		});
 		btnApplyChanges.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnApplyChanges.setBounds(310, 616, 195, 33);
+		btnApplyChanges.setBounds(310, 627, 195, 33);
 		contentPane.add(btnApplyChanges);
 		
 		JLabel lblMushroom = new JLabel("Mushroom");
@@ -357,5 +364,13 @@ public class Ingr_Stat_GUI extends JFrame {
 		lblOnion_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblOnion_1.setBounds(282, 407, 103, 25);
 		contentPane.add(lblOnion_1);
+		
+		JLabel lblGarlic = new JLabel("Garlic");
+		lblGarlic.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblGarlic.setForeground(Color.WHITE);
+		lblGarlic.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblGarlic.setBounds(282, 589, 103, 25);
+		contentPane.add(lblGarlic);
+	
 	}
 }
