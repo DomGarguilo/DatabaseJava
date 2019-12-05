@@ -46,6 +46,7 @@ public class Pasta_GUI extends JFrame {
 		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setForeground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -150,7 +151,7 @@ public class Pasta_GUI extends JFrame {
 		chckbxOldBay.setBounds(236, 489, 113, 25);
 		contentPane.add(chckbxOldBay);
 		
-		JCheckBox chckbxSallt = new JCheckBox("Sallt");
+		JCheckBox chckbxSallt = new JCheckBox("Salt");
 		chckbxSallt.setForeground(Color.WHITE);
 		chckbxSallt.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		chckbxSallt.setBackground(Color.DARK_GRAY);
@@ -171,10 +172,24 @@ public class Pasta_GUI extends JFrame {
 		chckbxGarlic.setBounds(517, 547, 113, 25);
 		contentPane.add(chckbxGarlic);
 		
+		
+		
+		// Set all of the data to whatever is selected and push to the DB. Sends user to order confirmation page.
 		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PastaOrder order = new PastaOrder();
+				//if () {
+					
+			//	}
+			}
+		});
 		btnSubmit.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnSubmit.setBounds(378, 614, 97, 25);
 		contentPane.add(btnSubmit);
+		// End of submit
+		
+		
 		
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
