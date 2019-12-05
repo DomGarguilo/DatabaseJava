@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -196,9 +195,29 @@ public class Pasta_GUI extends JFrame {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				PastaOrder order = new PastaOrder();
+				String q = "SELECT order_num FROM dgargu1db.pasta ORDER BY order_num DESC LIMIT 1;";
+				ResultSet rs = QueryClass.query(q);
+				int orderNum = 0;
+				try {
+					rs.next();
+					orderNum = Integer.parseInt(rs.getString("order_num")) + 1;
+					System.out.println("here" + orderNum);
+				} catch (NumberFormatException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 				// Adds pasta type
+				String pasta = "";
+				if (rdbtnBowtie.isSelected()) {
+					pasta = "Bowtie";
+				}
+				if (rdbtnPenne.isSelected()) {
+					pasta = "Penne";
+				}
 				
 				
 				// Adds sauce types
@@ -212,7 +231,7 @@ public class Pasta_GUI extends JFrame {
 				if (chckbxPesto.isSelected()) {
 					sauces += "Pesto ";
 				}
-				order.setSauceType(sauces);
+				
 				
 				// Adds ingredients
 				String ingredients = new String();
@@ -228,7 +247,7 @@ public class Pasta_GUI extends JFrame {
 				if (chckbxChicken.isSelected()) {
 					ingredients += "Chicken ";
 				}
-				order.setIngredients(ingredients);
+				
 				
 				// Adds seasonings 
 				String seasonings = new String();
@@ -244,8 +263,9 @@ public class Pasta_GUI extends JFrame {
 				if (chckbxOldBay.isSelected()) {
 					seasonings += "Garlic ";
 				}
-				order.setSeasonings(seasonings);
 				
+				
+				PastaOrder order = new PastaOrder(orderNum,0,pasta,sauces,ingredients,seasonings);
 				order.pushToDatabase();
 				
 			}
