@@ -390,14 +390,13 @@ public class Breakfast_Option_GUI_E extends JFrame {
 					
 					BreakfastOrder order = new BreakfastOrder(orderNum,0,0,friedEgg,omlette,scramble,"none",ingredients,bacon,sausage);
 					
-					//order.setIngredients(ingredients);
+					
 					order.pushToDatabase();
 					System.out.println(order.getIngredients());
-					/*
-					Breakfast_GUI bk = new Breakfast_GUI();
+					
+					End bk = new End();
 					bk.setVisible(true);
 					dispose();
-					*/
 				}
 			});
 		

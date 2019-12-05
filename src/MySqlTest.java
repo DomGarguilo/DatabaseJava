@@ -5,7 +5,7 @@ public class MySqlTest {
 	public static void main(String[] args) throws SQLException {
 		
 		
-		//boolean temp = Tools.getIngredientStatus("Spinach");
+		/*boolean temp = Tools.getIngredientStatus("Spinach");
 		Tools.setIngredientStatus("Spinach", true);
 		
 		String q = "SELECT * FROM dgargu1db.pasta";
@@ -37,6 +37,7 @@ public class MySqlTest {
 
 			System.out.println(order + ", " + ID + ", " + pasta + ", " + sauce + ", " + ingr + ", " + seas);
 		}
+		*/
 		
 
 	}

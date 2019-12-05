@@ -268,6 +268,10 @@ public class Pasta_GUI extends JFrame {
 				PastaOrder order = new PastaOrder(orderNum,0,pasta,sauces,ingredients,seasonings);
 				order.pushToDatabase();
 				
+				End bk = new End();
+				bk.setVisible(true);
+				dispose();
+				
 			}
 		});
 		btnSubmit.setFont(new Font("Tahoma", Font.PLAIN, 18));
