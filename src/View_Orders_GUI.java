@@ -112,7 +112,8 @@ public class View_Orders_GUI extends JFrame {
 		JButton btnCompleteBreakfastOrder = new JButton("Complete This Breakfast Order");
 		btnCompleteBreakfastOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String q = "DELETE FROM dgargu1db.breakfast WHERE order_num="+ textField.getText() +";";
+				System.out.println(textField.getText());
+				String q = "DELETE FROM dgargu1db.breakfast WHERE order_num="+ textField_1.getText() +";";
 				QueryClass.update(q);
 				View_Orders_GUI cg = new View_Orders_GUI();
 				cg.setVisible(true);
@@ -127,7 +128,7 @@ public class View_Orders_GUI extends JFrame {
 		contentPane.add(btnCompletePastaOrder);
 		btnCompletePastaOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String q = "DELETE FROM dgargu1db.pasta WHERE order_num="+ textField_1.getText() +";";
+				String q = "DELETE FROM dgargu1db.pasta WHERE order_num="+ textField.getText()  +";"; //textField_1.getText()
 				QueryClass.update(q);
 				View_Orders_GUI cg = new View_Orders_GUI();
 				cg.setVisible(true);
