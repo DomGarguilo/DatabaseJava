@@ -10,6 +10,9 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JRadioButton;
 import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 
@@ -174,11 +177,25 @@ public class Pasta_GUI extends JFrame {
 		contentPane.add(btnSubmit);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Breakfast_GUI bk = new Breakfast_GUI();
+				bk.setVisible(true);
+				dispose();
+			}
+		});
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnBack.setBounds(78, 34, 97, 25);
 		contentPane.add(btnBack);
 		
 		JButton btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Start start = new Start();
+				start.setVisible(true);
+				dispose();
+			}
+		});
 		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnLogout.setBounds(684, 34, 97, 25);
 		contentPane.add(btnLogout);
