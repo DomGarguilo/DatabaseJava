@@ -89,9 +89,7 @@ public class Start extends JFrame {
 					
 				} else	{ //if its neither
 					JOptionPane.showMessageDialog(rootPane, "ID not found");
-						End emd = new End();
-						emd.setVisible(true);
-						dispose();
+					textField.setText("");
 				}
 					
 				}
